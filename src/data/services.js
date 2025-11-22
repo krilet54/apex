@@ -5,6 +5,9 @@ const services = [
     title: 'Online Exam Centre',
     short: 'End-to-end online exam delivery with monitoring and proctoring.',
     slug: 'online-exam-centre',
+    heroImage: '/src/assets/images/service-1.png',
+    featureIcons: ['Monitor', 'Camera', 'ShieldCheck'],
+    icon: 'Laptop',
     features: [
       'Secure browser environments',
       'Proctoring & monitoring',
@@ -17,6 +20,9 @@ const services = [
     title: 'Manpower Outsourcing (IT & Operations)',
     short: 'Trained IT and operations staff for exam delivery and facility management.',
     slug: 'manpower-outsourcing',
+    heroImage: '/src/assets/images/service-2.png',
+    featureIcons: ['Users', 'UserCheck', 'Clipboard'],
+    icon: 'Users',
     features: ['Technical support engineers', 'Invigilation teams', 'Logistics coordinators'],
     description: `Provision of professional manpower for IT support, invigilation and operations to run exams smoothly and securely.`
   },
@@ -25,6 +31,9 @@ const services = [
     title: 'Seminar & Training Centres',
     short: 'Purpose-built centres for corporate training and seminars.',
     slug: 'seminar-training-centres',
+    heroImage: '/src/assets/images/service-3.png',
+    featureIcons: ['BookOpen', 'Mic', 'Calendar'],
+    icon: 'BookOpen',
     features: ['AV-enabled rooms', 'Modular seating', 'Catering support'],
     description: `Modern seminar and training spaces suitable for corporate programs, workshops and certification training with AV and support services.`
   },
@@ -33,6 +42,9 @@ const services = [
     title: 'Exam Security Services',
     short: 'Comprehensive security and compliance for examinations.',
     slug: 'exam-security-services',
+    heroImage: '/src/assets/images/service-4.png',
+    featureIcons: ['ShieldCheck', 'Video', 'Key'],
+    icon: 'ShieldCheck',
     features: ['CCTV', 'Access control', 'Secure document handling'],
     description: `Security services including CCTV monitoring, access control and secure handling of examination materials to maintain integrity.`
   },
@@ -41,6 +53,9 @@ const services = [
     title: 'Housekeeping Services',
     short: 'Daily cleaning, sanitisation and facility upkeep.',
     slug: 'housekeeping-services',
+    heroImage: '/src/assets/images/service-5.png',
+    featureIcons: ['Home', 'Droplet', 'Trash2'],
+    icon: 'Home',
     features: ['Regular cleaning schedules', 'Sanitisation', 'Waste management'],
     description: `Professional housekeeping and facility management to ensure a clean, safe and compliant environment for candidates and staff.`
   }

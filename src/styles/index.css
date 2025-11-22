@@ -5,11 +5,19 @@
 /* Custom global styles */
 :root{
   --brand: #0B63A8;
+  --theme-900: #1a3f22; /* dark green */
+  --theme-700: #58761b; /* medium green */
+  --theme-400: #d99201; /* gold */
+  --theme-300: #905a01; /* dark gold */
+  --cream: #F6EFE3;
 }
 
 html,body,#root{height:100%;}
 
 body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+
+/* Subtle page background (non-white) so full-width bands show clearly */
+body{background-color:#f4f7f2}
 
 .focus-ring:focus{outline:2px solid rgba(11,99,168,0.3);outline-offset:2px}
 
