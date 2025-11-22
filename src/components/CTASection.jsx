@@ -1,16 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function CTASection(){
+export default function CTASection() {
   return (
-    <section className="bg-gradient-to-r from-primary to-accent text-white py-12">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-semibold">Book a Site Visit</h3>
-          <p className="text-sm mt-1">See the facilities in person and discuss requirements with our team.</p>
+    <section className="bg-white border-[#D99201]/20 py-12">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 px-6">
+        <div className="text-center sm:text-left">
+          <h3 className="text-2xl font-semibold text-[#1A3F22]">
+            Book a Site Visit
+          </h3>
+          <p className="text-sm mt-2 text-[#58761B] max-w-md">
+            See the facilities in person and discuss your requirements with our team.
+          </p>
         </div>
+
         <div>
-          <Link to="/contact" className="px-6 py-3 bg-white text-primary rounded-xl">Contact Us</Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-6 py-3 text-white font-medium rounded-xl bg-gradient-to-b from-[#D99201] to-[#905A01] shadow-md hover:brightness-110 transition"
+          >
+            Contact Us
+          </Link>
         </div>
       </div>
     </section>

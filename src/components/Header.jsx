@@ -1,71 +1,205 @@
-import React, { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, Phone } from 'lucide-react'
+import React, { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X, Phone } from "lucide-react";
+import logo1 from "../assets/images/L2.png";
+import logo2 from "../assets/images/L3.png";
 
-export default function Header(){
-  const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(()=>{
-    const onScroll = ()=> setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return ()=> window.removeEventListener('scroll', onScroll)
-  }, [])
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
 
   const nav = [
-    {to: '/', label: 'Home'},
-    {to: '/about', label: 'About'},
-    {to: '/our-centre', label: 'Our Centre'},
-    {to: '/services', label: 'Services'},
-    {to: '/contact', label: 'Contact'}
-  ]
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/our-centre", label: "Our Centre" },
+    { to: "/services", label: "Services" },
+    { to: "/contact", label: "Contact" },
+  ];
 
   return (
-    <header className={`sticky top-0 z-40 transition backdrop-blur-sm ${scrolled? 'bg-white/70 shadow-sm': 'bg-white/60'}`}>
-      <div className="container mx-auto flex items-center justify-between py-4">
-        <div className="flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center text-white font-bold">A</div>
-            <span className="font-semibold text-lg">Apex</span>
-          </Link>
-        </div>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200"
+            : "bg-white/90 backdrop-blur-sm"
+        }`}
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo Section */}
+            <Link to="/" className="flex items-center gap-0 flex-shrink-0 z-50">
+              <img
+                src={logo1}
+                alt="Logo 1"
+                className="h-12 sm:h-14 w-auto object-contain"
+              />
+              <img
+                src={logo2}
+                alt="Logo 2"
+                className="h-10 sm:h-12 w-auto object-contain -ml-1"
+              />
+            </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
-          {nav.map(item=> (
-            <NavLink key={item.to} to={item.to} className={({isActive}) => `text-sm font-medium ${isActive? 'text-primary':'text-slate-700'}`}>
-              {item.label}
-            </NavLink>
-          ))}
-          <Link to="/contact" className="ml-4 inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl shadow-sm">Get Quote</Link>
-        </nav>
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {nav.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `text-sm font-medium transition-all duration-200 relative py-2 ${
+                      isActive
+                        ? "text-[#1A3F22]"
+                        : "text-[#58761B] hover:text-[#1A3F22]"
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      {item.label}
+                      {isActive && (
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#D99201] rounded-full" />
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              ))}
 
-        <div className="md:hidden">
-          <button aria-label="Open menu" className="p-2 rounded-md focus-ring" onClick={()=>setOpen(true)}>
-            <Menu size={20} />
-          </button>
-        </div>
-      </div>
+              <Link
+                to="/contact"
+                className="ml-2 inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg 
+                           bg-[#D99201] hover:bg-[#B87A01] text-white text-sm font-semibold 
+                           transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+              >
+                Get Quote
+              </Link>
+            </nav>
 
-      {/* Mobile drawer */}
-      <div className={`fixed inset-0 z-50 transform ${open? 'translate-x-0':'translate-x-full'} transition-transform`} aria-hidden={!open}>
-        <div className="absolute inset-0 bg-black/30" onClick={()=>setOpen(false)}></div>
-        <aside className="absolute right-0 top-0 h-full w-72 bg-white p-6 shadow-lg">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2"><div className="w-8 h-8 rounded bg-primary text-white flex items-center justify-center">A</div><span className="font-semibold">Apex</span></div>
-            <button aria-label="Close menu" className="p-2" onClick={()=>setOpen(false)}><X size={20}/></button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 text-[#1A3F22] transition-colors"
+            >
+              <Menu size={24} />
+            </button>
           </div>
-          <nav className="flex flex-col gap-3">
-            {nav.map(item=> (
-              <NavLink key={item.to} to={item.to} onClick={()=>setOpen(false)} className={({isActive})=>`py-2 ${isActive? 'text-primary font-semibold':'text-slate-700'}`}>
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
-          <div className="mt-6">
-            <a href="tel:9560553909" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl"><Phone size={16}/> 9560553909</a>
-          </div>
-        </aside>
-      </div>
-    </header>
-  )
+        </div>
+      </header>
+      <div className="h-20"></div>
+
+      {/* Mobile Menu Overlay */}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 lg:hidden"
+          aria-hidden={!open}
+        >
+          {/* Backdrop */}
+          <div
+            className={`absolute inset-0 bg-black transition-opacity duration-300 ${
+              open ? "opacity-40" : "opacity-0"
+            }`}
+            onClick={() => setOpen(false)}
+          />
+
+          {/* Mobile Drawer */}
+          <aside
+            className={`absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl 
+                       transform transition-transform duration-300 ease-out flex flex-col
+                       ${open ? "translate-x-0" : "translate-x-full"}`}
+            role="dialog"
+            aria-modal="true"
+          >
+            {/* Drawer Header */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200">
+              <div className="flex items-center gap-0">
+                <img
+                  src={logo1}
+                  alt="Logo 1"
+                  className="h-10 w-auto object-contain"
+                />
+                <img
+                  src={logo2}
+                  alt="Logo 2"
+                  className="h-8 w-auto object-contain -ml-1"
+                />
+              </div>
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="p-2 rounded-lg hover:bg-gray-100 text-[#1A3F22] transition-colors"
+              >
+                <X size={22} />
+              </button>
+            </div>
+
+            {/* Navigation Links */}
+            <nav className="flex-1 overflow-y-auto py-6 px-6">
+              <div className="flex flex-col gap-1">
+                {nav.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+                        isActive
+                          ? "text-[#1A3F22] bg-[#F4F7EB] shadow-sm"
+                          : "text-[#58761B] hover:text-[#1A3F22] hover:bg-gray-50"
+                      }`
+                    }
+                  >
+                    {item.label}
+                  </NavLink>
+                ))}
+              </div>
+            </nav>
+
+            {/* Drawer Footer */}
+            <div className="px-6 py-6 border-t border-gray-200 space-y-3">
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg 
+                           bg-[#D99201] hover:bg-[#B87A01] text-white text-base font-semibold 
+                           transition-all duration-200 shadow-md"
+              >
+                Get Quote
+              </Link>
+              <a
+                href="tel:9560553909"
+                className="flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg 
+                           border-2 border-[#58761B] text-[#58761B] hover:bg-[#F4F7EB] 
+                           text-base font-semibold transition-all duration-200"
+              >
+                <Phone size={18} /> 9560553909
+              </a>
+            </div>
+          </aside>
+        </div>
+      )}
+    </>
+  );
 }

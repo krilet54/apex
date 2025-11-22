@@ -2,37 +2,69 @@ import React, { useEffect } from 'react'
 import PageContainer from '../components/PageContainer'
 import LocationMap from '../components/LocationMap'
 
-export default function OurCentre(){
-  useEffect(()=>{document.title = 'Apex — Our Centre';}, [])
+export default function OurCentre() {
+  useEffect(() => {
+    document.title = 'Apex — Our Centre'
+  }, [])
+
   return (
     <PageContainer>
-      <h1 className="text-3xl font-bold">Our Centre</h1>
-      <p className="mt-4 text-slate-700">Facility details and photos. Capacity: 172 workstations, 7 labs, UPS backup, CCTV monitoring, waiting rooms and accessible location in Vasant Vihar.</p>
+      {/* Header */}
+      <h1 className="text-3xl font-bold text-[#1A3F22]">Our Centre</h1>
+      <p className="mt-4 text-[#58761B] leading-relaxed">
+        Facility details and photos. Capacity: <span className="font-medium text-[#905A01]">172 workstations</span>, 7 labs, UPS backup, CCTV monitoring,
+        waiting rooms and accessible location in Vasant Vihar.
+      </p>
 
-      <section className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div>
-          <h3 className="font-semibold">Facilities</h3>
-          <ul className="list-disc pl-5 mt-2 text-slate-700">
+      {/* Facilities & Gallery */}
+      <section className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Facilities */}
+        <div className="bg-gradient-to-b from-white to-[#fffaf3] border border-[#D99201]/20 rounded-2xl shadow-sm p-6 sm:p-8">
+          <h3 className="font-semibold text-lg text-[#1A3F22]">Facilities</h3>
+          <ul className="list-disc pl-5 mt-3 space-y-2 text-[#58761B] leading-relaxed">
             <li>172 computer workstations with individual desks</li>
             <li>7 configurable labs for different setups</li>
             <li>AC throughout, UPS backup and generator support</li>
             <li>CCTV monitoring and biometric access control</li>
-            <li>Waiting area, candidate verification counters</li>
+            <li>Waiting area and candidate verification counters</li>
           </ul>
         </div>
-        <div>
-          <h3 className="font-semibold">Photo gallery</h3>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            <img src="/src/assets/images/centre-1.jpg" alt="Lab photo" className="w-full h-28 object-cover rounded" loading="lazy" />
-            <img src="/src/assets/images/centre-2.jpg" alt="Workstations" className="w-full h-28 object-cover rounded" loading="lazy" />
-            <img src="/src/assets/images/centre-3.jpg" alt="Waiting area" className="w-full h-28 object-cover rounded" loading="lazy" />
-            <img src="/src/assets/images/centre-4.jpg" alt="Entrance" className="w-full h-28 object-cover rounded" loading="lazy" />
+
+        {/* Photo Gallery */}
+        <div className="bg-white border border-[#D99201]/20 rounded-2xl shadow-sm p-6 sm:p-8">
+          <h3 className="font-semibold text-lg text-[#1A3F22]">Photo Gallery</h3>
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            <img
+              src="/src/assets/images/centre-1.jpg"
+              alt="Lab photo"
+              className="w-full h-32 object-cover rounded-lg border border-[#D99201]/20 shadow-sm"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/images/centre-2.jpg"
+              alt="Workstations"
+              className="w-full h-32 object-cover rounded-lg border border-[#D99201]/20 shadow-sm"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/images/centre-3.jpg"
+              alt="Waiting area"
+              className="w-full h-32 object-cover rounded-lg border border-[#D99201]/20 shadow-sm"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/images/centre-4.jpg"
+              alt="Entrance"
+              className="w-full h-32 object-cover rounded-lg border border-[#D99201]/20 shadow-sm"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
 
-      <section className="mt-8">
-        <h3 className="font-semibold">Location</h3>
+      {/* Location Section */}
+      <section className="mt-12 bg-gradient-to-b from-white to-[#fffaf3] border border-[#D99201]/20 rounded-2xl shadow-sm p-6 sm:p-8">
+        <h3 className="font-semibold text-lg text-[#1A3F22] mb-4">Location</h3>
         <LocationMap />
       </section>
     </PageContainer>
