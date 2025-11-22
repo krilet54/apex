@@ -45,11 +45,12 @@ export default function ServiceList() {
               >
                 {/* Image Area */}
                 <div className="h-36 lg:h-44 w-full overflow-hidden rounded-t-xl relative bg-[#1A3F22]/5">
-                  <img
-                    src="/src/assets/images/service-placeholder.svg"
-                    alt={`${s.title} image`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                    <img
+                      src={s.heroImage ?? '/src/assets/images/service-placeholder.svg'}
+                      alt={`${s.title} image`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                 </div>
 
                 {/* Icon */}
