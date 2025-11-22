@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+:root{
+  --brand: #0B63A8;
+}
+
+html,body,#root{height:100%;}
+
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+
+.focus-ring:focus{outline:2px solid rgba(11,99,168,0.3);outline-offset:2px}
+
+.reduced-motion{animation:none!important;transition:none!important}
+
+/* Strong focus-visible styles for accessibility */
+*:focus-visible {
+  outline: 3px solid rgba(59,130,246,0.35);
+  outline-offset: 3px;
+}
+
+/* Card specific focus styling */
+.card-focus:focus-visible{box-shadow:0 6px 18px rgba(11,99,168,0.18);border-color:rgba(11,99,168,0.25)}
+
+/* Buttons and links inside gradient cards need higher contrast focus */
+.gradient-btn:focus-visible{outline:2px solid rgba(255,255,255,0.6);outline-offset:2px}
