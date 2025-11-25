@@ -197,7 +197,7 @@ body{background-color:#f4f7f2}
     left: 50%;
     top: 50%;
     box-sizing: border-box;
-    border: 7px solid #FF3D00;
+    border: 7px solid #556B2F;
     border-radius:50%;
     animation: rotate 0.5s linear infinite;
   }

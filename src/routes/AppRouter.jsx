@@ -13,11 +13,7 @@ export default function AppRouter() {
     <Suspense
       fallback={
         <div className="h-screen w-full flex justify-center items-center bg-white">
-          {/* SVG filter for gooey effect */}
-          
-
-          {/* Actual loader */}
-          <div className="loader" />
+          <div className="loader" ></div>
         </div>
       }
     >
