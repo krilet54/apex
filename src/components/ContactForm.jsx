@@ -39,7 +39,7 @@ export default function ContactForm(){
         <textarea name="message" value={form.message} onChange={update} className="mt-1 border rounded px-3 py-2 h-28 focus-ring" required />
       </label>
       <div className="mt-4 flex items-center gap-3">
-        <button type="submit" className="px-4 py-2 bg-primary text-white rounded-xl">Send Message</button>
+        <button type="submit" className="btn-base btn-primary">Send Message</button>
         {status && <div className={`${status.type==='success'? 'text-green-600':'text-red-600'} text-sm`}>{status.message}</div>}
       </div>
     </form>

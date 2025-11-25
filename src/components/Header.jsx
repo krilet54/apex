@@ -89,9 +89,7 @@ export default function Header() {
 
               <Link
                 to="/contact"
-                className="ml-2 inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg 
-                           bg-[#D99201] hover:bg-[#B87A01] text-white text-sm font-semibold 
-                           transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                className="ml-2 btn-base btn-primary"
               >
                 Get Quote
               </Link>
@@ -182,17 +180,13 @@ export default function Header() {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg 
-                           bg-[#D99201] hover:bg-[#B87A01] text-white text-base font-semibold 
-                           transition-all duration-200 shadow-md"
+                className="btn-base btn-primary w-full"
               >
                 Get Quote
               </Link>
               <a
                 href="tel:9560553909"
-                className="flex items-center justify-center w-full gap-2 px-6 py-3 rounded-lg 
-                           border-2 border-[#58761B] text-[#58761B] hover:bg-[#F4F7EB] 
-                           text-base font-semibold transition-all duration-200"
+                className="btn-base btn-outline w-full"
               >
                 <Phone size={18} /> 9560553909
               </a>
