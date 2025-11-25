@@ -33,7 +33,7 @@ export default function Contact() {
 
       {/* Main grid */}
       <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* Contact form stays as-is */}
+        {/* Contact form */}
         <div className="bg-white border border-[#D99201]/20 rounded-2xl shadow-sm p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-[#1A3F22] mb-4">
             Send us a message
@@ -45,16 +45,12 @@ export default function Contact() {
         <div className="space-y-4">
           <div className="bg-gradient-to-b from-white to-[#fffaf3] border border-[#D99201]/20 rounded-2xl shadow-sm p-6 sm:p-7">
             <h3 className="font-semibold text-lg text-[#1A3F22]">
-              Office &amp; Hours
+              Office
             </h3>
             <p className="text-sm sm:text-base text-[#58761B] mt-3 leading-relaxed">
               Guru Harkrishan Public School,
               <br />
               Vasant Vihar, New Delhi - 110057
-            </p>
-            <p className="mt-3 text-sm sm:text-base text-[#58761B]">
-              <span className="font-medium text-[#905A01]">Office hours:</span>{' '}
-              Mon — Sat, 09:00 — 18:00
             </p>
           </div>
 
