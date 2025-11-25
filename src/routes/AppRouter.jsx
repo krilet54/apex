@@ -10,24 +10,17 @@ const Contact = lazy(() => import('../pages/Contact'))
 
 export default function AppRouter() {
   return (
-<Suspense
-  fallback={
-    <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-      <div className="loader">
-        <span>
-          <span></span><span></span><span></span><span></span>
-        </span>
-        <div className="base">
-          <span></span>
-          <div className="face"></div>
+    <Suspense
+      fallback={
+        <div className="h-screen w-full flex justify-center items-center bg-white">
+          {/* SVG filter for gooey effect */}
+          
+
+          {/* Actual loader */}
+          <div className="loader" />
         </div>
-      </div>
-      <div className="longfazers">
-        <span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-  }
->
+      }
+    >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
