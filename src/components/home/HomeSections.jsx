@@ -257,9 +257,6 @@ export function InfrastructureStats() {
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-white/60">Infrastructure Statistics</p>
           <h2 className="mt-3 text-3xl font-semibold">Visual proof through numbers</h2>
-          <p className="mt-2 text-white/70">
-            Figures from Guru Harkishan PPT (1) summarised for stakeholders.
-          </p>
         </motion.div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -422,7 +419,6 @@ export function PrimaryCTA() {
   return (
     <section className="bg-[#102616] py-20 text-white">
       <div className="container mx-auto px-6 text-center">
-        <p className="text-xs uppercase tracking-[0.4em] text-white/60">Primary Call To Action</p>
         <h2 className="mt-4 text-3xl font-semibold">“Let’s Build Infrastructure That Performs Under Pressure.”</h2>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link to="/contact" className="btn-base btn-primary">
