@@ -1,11 +1,17 @@
 // Editable services data used by Services page and ServiceDetail template
+import s1 from '../assets/ESS.png'
+import s2 from '../assets/HSS.png'
+import s3 from '../assets/MP.png'
+import s4 from '../assets/OEC.png'
+import s5 from '../assets/ST.png'
+
 const services = [
   {
     id: 'online-exam-centre',
     title: 'Online Exam Centre',
     short: 'End-to-end online exam delivery with monitoring and proctoring.',
     slug: 'online-exam-centre',
-    heroImage: '/src/assets/images/service-1.png',
+    heroImage: s4,
     featureIcons: ['Monitor', 'Camera', 'ShieldCheck'],
     icon: 'Laptop',
     features: [
@@ -20,7 +26,7 @@ const services = [
     title: 'Manpower Outsourcing (IT & Operations)',
     short: 'Trained IT and operations staff for exam delivery and facility management.',
     slug: 'manpower-outsourcing',
-    heroImage: '/src/assets/images/service-2.png',
+    heroImage: s3,
     featureIcons: ['Users', 'UserCheck', 'Clipboard'],
     icon: 'Users',
     features: ['Technical support engineers', 'Invigilation teams', 'Logistics coordinators'],
@@ -31,7 +37,7 @@ const services = [
     title: 'Seminar & Training Centres',
     short: 'Purpose-built centres for corporate training and seminars.',
     slug: 'seminar-training-centres',
-    heroImage: '/src/assets/images/service-3.png',
+    heroImage: s5,
     featureIcons: ['BookOpen', 'Mic', 'Calendar'],
     icon: 'BookOpen',
     features: ['AV-enabled rooms', 'Modular seating', 'Catering support'],
@@ -42,7 +48,7 @@ const services = [
     title: 'Exam Security Services',
     short: 'Comprehensive security and compliance for examinations.',
     slug: 'exam-security-services',
-    heroImage: '/src/assets/images/service-4.png',
+    heroImage: s1,
     featureIcons: ['ShieldCheck', 'Video', 'Key'],
     icon: 'ShieldCheck',
     features: ['CCTV', 'Access control', 'Secure document handling'],
@@ -53,7 +59,7 @@ const services = [
     title: 'Housekeeping Services',
     short: 'Daily cleaning, sanitisation and facility upkeep.',
     slug: 'housekeeping-services',
-    heroImage: '/src/assets/images/service-5.png',
+    heroImage: s2,
     featureIcons: ['Home', 'Droplet', 'Trash2'],
     icon: 'Home',
     features: ['Regular cleaning schedules', 'Sanitisation', 'Waste management'],
