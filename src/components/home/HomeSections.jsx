@@ -17,6 +17,11 @@ import timelapseReel from '../../assets/images/Stop_Motion_Exam_Centre_Timelapse
 import labImage from '../../assets/images/examination lab.png'
 import waitingRoomImage from '../../assets/images/exam waiting room.png'
 import desksImage from '../../assets/images/desks exam.png'
+import accaLogo from '../../assets/acca.png'
+import bitsLogo from '../../assets/bits.png'
+import cfaLogo from '../../assets/Cfa.png'
+import britishCouncilLogo from '../../assets/british council.png'
+import mrcpLogo from '../../assets/mrcp.svg'
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -24,13 +29,12 @@ const fadeUp = {
   viewport: { once: true, amount: 0.3 }
 }
 
-const trustBadges = [
-  'British Council',
-  'ACCA',
-  'CFA',
-  'MRCP',
-  'RCPCH',
-  'BITS Pilani – WILP'
+const trustLogos = [
+  { name: 'British Council', image: britishCouncilLogo },
+  { name: 'ACCA', image: accaLogo },
+  { name: 'CFA Institute', image: cfaLogo },
+  { name: 'MRCP(UK)', image: mrcpLogo },
+  { name: 'BITS Pilani – WILP', image: bitsLogo }
 ]
 
 const infrastructureStats = [
@@ -158,16 +162,26 @@ export function TrustStrip() {
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8 flex flex-wrap justify-center gap-4"
+          className="mt-8"
         >
-          {trustBadges.map((badge) => (
-            <div
-              key={badge}
-              className="px-6 py-3 rounded-full border border-white/20 bg-white/5 text-sm tracking-wide backdrop-blur"
-            >
-              {badge}
+          <div className="overflow-hidden py-6">
+            <div className="trust-marquee flex items-center gap-10 px-4">
+              {[...trustLogos, ...trustLogos].map((logo, index) => (
+                <div
+                  key={`${logo.name}-${index}`}
+                  className="min-w-[170px] flex items-center justify-center"
+                >
+                  <img
+                    src={logo.image}
+                    alt={`${logo.name} logo`}
+                    className="h-14 w-auto object-contain max-w-[180px]"
+                    draggable={false}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </motion.div>
       </div>
     </section>
