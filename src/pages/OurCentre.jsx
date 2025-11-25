@@ -58,9 +58,6 @@ export default function OurCentre() {
       <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gradient-to-br from-[#0B1F13] via-[#122A18] to-[#1D3C24] text-white py-12 lg:py-16 border-y border-white/10">
         <div className="container mx-auto px-6 lg:px-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.35em] text-white/70">
-              Our Centre
-            </div>
             <h1 className="mt-4 text-4xl lg:text-[44px] font-semibold leading-tight">
               A purpose-built examination floor that mirrors defence-grade control.
             </h1>

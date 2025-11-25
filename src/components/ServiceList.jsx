@@ -11,28 +11,27 @@ const ICONS = {
   'housekeeping-services': Home
 }
 
-export default function ServiceList() {
+export default function ServiceList({ showHeading = true, withContainer = true }) {
   const navigate = useNavigate()
 
-  return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-semibold text-[#1A3F22]">
-          Our Services
-        </h2>
-        <p className="mt-3 text-[#58761B]">
-          Comprehensive, secure and scalable services for exam delivery, training and facility operations.
-        </p>
-      </div>
+  const content = (
+    <>
+      {showHeading && (
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-[#1A3F22]">Our Services</h2>
+          <p className="mt-3 text-[#58761B]">
+            Comprehensive, secure and scalable services for exam delivery, training and facility operations.
+          </p>
+        </div>
+      )}
 
-      {/* Card Grid */}
-      <div className="mt-12 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4">
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
         {services.map((s) => {
           const Icon = ICONS[s.id] || Clipboard
           return (
             <div
               key={s.id}
-              className="rounded-xl border border-[#D99201]/20 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 bg-white"
+              className="rounded-[28px] border border-[#E5DCCB] bg-white/90 backdrop-blur shadow-[0_15px_40px_rgba(10,31,17,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               <article
                 tabIndex={0}
@@ -43,51 +42,54 @@ export default function ServiceList() {
                 }}
                 className="group flex flex-col h-full"
               >
-                {/* Image Area */}
-                <div className="h-36 lg:h-44 w-full overflow-hidden rounded-t-xl relative bg-[#1A3F22]/5">
-                    <img
-                      src={s.heroImage ?? '/src/assets/images/service-placeholder.svg'}
-                      alt={`${s.title} image`}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                <div className="relative h-40 overflow-hidden rounded-t-[28px]">
+                  <img
+                    src={s.heroImage ?? '/src/assets/images/service-placeholder.svg'}
+                    alt={`${s.title} image`}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
                 </div>
 
-                {/* Icon */}
-                <div className="-mt-7 flex justify-center z-10">
-                  <div className="w-14 h-14 rounded-full bg-[#1A3F22] flex items-center justify-center border-4 border-white shadow-md">
-                    <Icon size={20} className="text-[#D99201]" />
+                <div className="-mt-8 px-6 relative z-10 flex justify-center">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-[#1A3F22] shadow-[0_15px_35px_rgba(16,40,23,0.25)] border border-[#E5DCCB]">
+                    <Icon size={20} />
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 flex flex-col justify-between px-6 pb-6 pt-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-[#1A3F22] leading-snug">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-[#58761B]">
-                      {s.short}
-                    </p>
+                    <h3 className="text-lg font-semibold text-[#1A3F22] leading-snug">{s.title}</h3>
+                    <p className="mt-2 text-sm text-[#4C6B37]">{s.short}</p>
                   </div>
 
-                  <div className="mt-6">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        navigate(`/services/${s.slug}`)
-                      }}
-                      className="btn-base btn-primary w-full"
-                    >
-                      View Service
-                    </button>
-                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      navigate(`/services/${s.slug}`)
+                    }}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#1A3F22]"
+                  >
+                    View service
+                    <span aria-hidden>→</span>
+                  </button>
                 </div>
               </article>
             </div>
           )
         })}
       </div>
+    </>
+  )
+
+  return (
+    <section className="py-10">
+      {withContainer ? (
+        <div className="container mx-auto px-4">{content}</div>
+      ) : (
+        <>{content}</>
+      )}
     </section>
   )
 }
