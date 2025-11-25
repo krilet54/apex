@@ -307,13 +307,15 @@ export function CentrePreview() {
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-              <div className="relative flex h-full flex-col justify-between p-6 text-white">
-                <div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-white/80">
-                  <MonitorSmartphone className="h-5 w-5 text-[#F2C94C]" />
-                  {item.accent}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/75 via-transparent to-transparent" />
+              <div className="relative flex h-full flex-col justify-end p-6">
+                <div className="inline-flex flex-col gap-2 text-white drop-shadow-[0_12px_28px_rgba(0,0,0,0.55)]">
+                  <div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-white/80">
+                    <MonitorSmartphone className="h-5 w-5 text-white" />
+                    {item.accent}
+                  </div>
+                  <h3 className="text-2xl font-semibold">{item.label}</h3>
                 </div>
-                <h3 className="text-2xl font-semibold drop-shadow-lg">{item.label}</h3>
               </div>
             </div>
           ))}
