@@ -27,16 +27,10 @@ export default function Hero() {
 
             {/* Buttons */}
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                to="/services"
-                className="inline-flex items-center px-5 py-3 text-white font-medium rounded-xl bg-gradient-to-b from-[#D99201] to-[#905A01] shadow-md hover:brightness-110 transition"
-              >
+              <Link to="/services" className="btn-base btn-primary">
                 Explore Services
               </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center px-5 py-3 border border-white/60 rounded-xl text-white hover:bg-white/10 transition"
-              >
+              <Link to="/contact" className="btn-base btn-outline-light">
                 Contact Us
               </Link>
             </div>

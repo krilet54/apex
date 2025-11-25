@@ -17,7 +17,7 @@ export default function CTASection() {
         <div>
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center px-6 py-3 text-white font-medium rounded-xl bg-gradient-to-b from-[#D99201] to-[#905A01] shadow-md hover:brightness-110 transition"
+            className="btn-base btn-primary"
           >
             Contact Us
           </Link>

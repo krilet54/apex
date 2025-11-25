@@ -77,7 +77,7 @@ export default function ServiceList() {
                         e.stopPropagation()
                         navigate(`/services/${s.slug}`)
                       }}
-                      className="w-full inline-flex items-center justify-center px-4 py-2 text-white rounded-md bg-gradient-to-b from-[#D99201] to-[#905A01] hover:brightness-110 transition"
+                      className="btn-base btn-primary w-full"
                     >
                       View Service
                     </button>
