@@ -10,7 +10,7 @@ const Contact = lazy(() => import('../pages/Contact'))
 
 export default function AppRouter(){
   return (
-    <Suspense fallback={<div className="p-8">Loading...</div>}>
+    <Suspense fallback={<span class="loader"></span>}>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
