@@ -13,10 +13,10 @@ const contactCards = [
     icon: Phone
   },
   {
-    label: 'Email',
-    value: 'tusharsalesindia@gmail.com',
-    subcopy: 'Direct inbox',
-    href: 'mailto:tusharsalesindia@gmail.com',
+    label: 'Email desk',
+    value: 'tusharsales@gmail.com',
+    subcopy: 'We respond within 1 business day',
+    href: 'mailto:tusharsales@gmail.com',
     icon: Mail
   },
   {
