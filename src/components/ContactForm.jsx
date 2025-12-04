@@ -20,7 +20,7 @@ export default function ContactForm({ className = '' }){
     setStatus({type:'info', message:'Sending your message…'})
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/tusharsales@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/tusharsalesindia@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

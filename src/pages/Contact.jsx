@@ -14,9 +14,9 @@ const contactCards = [
   },
   {
     label: 'Email desk',
-    value: 'tusharsales@gmail.com',
+    value: 'tusharsalesindia@gmail.com',
     subcopy: 'We respond within 1 business day',
-    href: 'mailto:tusharsales@gmail.com',
+    href: 'mailto:tusharsalesindia@gmail.com',
     icon: Mail
   },
   {

@@ -153,10 +153,35 @@ body{background-color:#f4f7f2}
   animation:reelGlow 6s ease-in-out infinite;
 }
 
+.cta-gradient{
+  background:radial-gradient(circle at 15% 25%, rgba(105,176,85,0.35), transparent 55%),
+             radial-gradient(circle at 80% 15%, rgba(46,112,63,0.35), transparent 50%),
+             linear-gradient(120deg, #06140B 0%, #0D2616 35%, #15381E 65%, #21502A 100%);
+  background-size:180% 180%;
+  animation:ctaGradientShift 14s ease-in-out infinite;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta-gradient::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 60%, rgba(255,255,255,0.05), transparent 60%);
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+
 @keyframes reelGlow{
   0%{opacity:0.35;box-shadow:0 0 20px rgba(242,201,76,0.2);}
   50%{opacity:1;box-shadow:0 0 36px rgba(242,201,76,0.35);}
   100%{opacity:0.35;box-shadow:0 0 20px rgba(242,201,76,0.2);}
+}
+
+@keyframes ctaGradientShift{
+  0%{background-position:0% 0%, 100% 50%, 0% 0%;}
+  50%{background-position:50% 100%, 0% 50%, 100% 100%;}
+  100%{background-position:0% 0%, 100% 50%, 0% 0%;}
 }
 
 .trust-marquee{

@@ -53,8 +53,8 @@ export default function Footer() {
             </div>
             <div>
               Email:{' '}
-                <a href="mailto:tusharsales@gmail.com" className="text-white font-semibold hover:underline">
-                  tusharsales@gmail.com
+                <a href="mailto:tusharsalesindia@gmail.com" className="text-white font-semibold hover:underline">
+                  tusharsalesindia@gmail.com
               </a>
             </div>
           </address>

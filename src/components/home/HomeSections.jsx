@@ -13,13 +13,14 @@ import {
   Users
 } from 'lucide-react'
 import { motion } from 'framer-motion'
+import useTypedText from '../../hooks/useTypedText'
 import timelapseReel from '../../assets/images/Stop_Motion_Exam_Centre_Timelapse_Video.mp4'
 import labImage from '../../assets/images/examination lab.png'
 import waitingRoomImage from '../../assets/images/exam waiting room.png'
 import desksImage from '../../assets/images/desks exam.png'
 import accaLogo from '../../assets/acca.png'
 import bitsLogo from '../../assets/bits.png'
-import cfaLogo from '../../assets/Cfa.png'
+import cfaLogo from '../../assets/cfa.png'
 import britishCouncilLogo from '../../assets/british council.png'
 import mrcpLogo from '../../assets/mrcp.svg'
 
@@ -30,10 +31,10 @@ const fadeUp = {
 }
 
 const trustLogos = [
-  { name: 'British Council', image: britishCouncilLogo },
+  { name: 'British Council', image: britishCouncilLogo, className: 'h-20' },
   { name: 'ACCA', image: accaLogo },
   { name: 'CFA Institute', image: cfaLogo },
-  { name: 'MRCP(UK)', image: mrcpLogo },
+  { name: 'MRCP(UK)', image: mrcpLogo, className: 'h-12' },
   { name: 'BITS Pilani – WILP', image: bitsLogo }
 ]
 
@@ -169,12 +170,12 @@ export function TrustStrip() {
               {[...trustLogos, ...trustLogos].map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="min-w-[170px] flex items-center justify-center"
+                  className="min-w-[200px] flex items-center justify-center"
                 >
                   <img
                     src={logo.image}
                     alt={`${logo.name} logo`}
-                    className="h-14 w-auto object-contain max-w-[180px]"
+                    className={`${logo.className ?? 'h-16'} w-auto object-contain`}
                     draggable={false}
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
@@ -308,8 +309,10 @@ export function CentrePreview() {
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="grid gap-4 sm:grid-cols-2">
           {galleryItems.map((item, index) => (
-            <div
+            <motion.div
               key={item.label}
+              {...fadeUp}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
               className={`${index === 0 ? 'sm:col-span-2 h-64' : 'h-48'} relative rounded-2xl overflow-hidden border border-[#D99201]/30 shadow-lg`}
             >
               <img
@@ -328,7 +331,7 @@ export function CentrePreview() {
                   <h3 className="text-2xl font-semibold">{item.label}</h3>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
@@ -430,10 +433,11 @@ export function LocationPreview() {
 }
 
 export function PrimaryCTA() {
+  const primaryHeadline = useTypedText('“Let’s Build Infrastructure That Performs Under Pressure.”', { speed: 60, delay: 240 })
   return (
     <section className="bg-[#102616] py-20 text-white">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="mt-4 text-3xl font-semibold">“Let’s Build Infrastructure That Performs Under Pressure.”</h2>
+        <h2 className="mt-4 text-3xl font-semibold">{primaryHeadline}</h2>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link to="/contact" className="btn-base btn-primary">
             Contact Apex
@@ -448,13 +452,14 @@ export function PrimaryCTA() {
 }
 
 export function QuickContactStrip() {
+  const quickContactHeadline = useTypedText('Talk to our infrastructure desk', { speed: 55, delay: 200 })
   return (
     <section className="bg-gradient-to-r from-[#FDF6EA] to-white py-16">
       <div className="container mx-auto px-6">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-[#58761B]">Quick Contact</p>
-            <h2 className="mt-3 text-2xl font-semibold text-[#1A3F22]">Talk to our infrastructure desk</h2>
+            <h2 className="mt-3 text-2xl font-semibold text-[#1A3F22]">{quickContactHeadline}</h2>
 
             <div className="mt-6 space-y-4 text-[#1C4B26]">
               <div className="flex items-center gap-3">
@@ -463,15 +468,15 @@ export function QuickContactStrip() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#D99201]" />
-                <a href="mailto:tusharsales@gmail.com" className="hover:underline">
-                  tusharsales@gmail.com
+                <a href="mailto:tusharsalesindia@gmail.com" className="hover:underline">
+                  tusharsalesindia@gmail.com
                 </a>
               </div>
             </div>
           </div>
 
           <form
-            action="mailto:tusharsales@gmail.com"
+            action="mailto:tusharsalesindia@gmail.com"
             method="POST"
             encType="text/plain"
             className="rounded-2xl border border-[#D99201]/30 bg-white p-6 shadow-lg"

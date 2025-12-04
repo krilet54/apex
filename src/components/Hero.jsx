@@ -1,7 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion, useReducedMotion } from 'framer-motion'
 
 export default function Hero() {
+  const prefersReducedMotion = useReducedMotion()
+  const headingAnimation = prefersReducedMotion
+    ? {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 0.8, ease: 'easeOut' }
+      }
+    : {
+        initial: { clipPath: 'inset(0 100% 0 0)', opacity: 1 },
+        animate: { clipPath: 'inset(0 0% 0 0)', opacity: 1 },
+        transition: { duration: 2.2, ease: [0.22, 1, 0.36, 1] }
+      }
+
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Background Image */}
@@ -17,9 +31,13 @@ export default function Hero() {
       <div className="relative" style={{ minHeight: 'calc(100vh - 84px)' }}>
         <div className="container mx-auto px-6 h-full flex items-center">
           <div className="max-w-2xl p-6 lg:p-12">
-            <h1 className="text-4xl lg:text-[56px] font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)]">
+            <motion.h1
+              className="text-4xl lg:text-[56px] font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)]"
+              aria-label="Government-grade Examination & Training Facilities"
+              {...headingAnimation}
+            >
               Government-grade Examination & Training Facilities
-            </h1>
+            </motion.h1>
             <p className="mt-4 text-white/90 max-w-xl">
               Secure, reliable and fully managed exam delivery with on-site support.
               Trusted by institutional clients for high-stakes assessments.
