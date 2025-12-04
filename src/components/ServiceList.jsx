@@ -18,12 +18,18 @@ export default function ServiceList({ showHeading = true, withContainer = true }
   const content = (
     <>
       {showHeading && (
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
           <h2 className="text-3xl font-semibold text-[#1A3F22]">Our Services</h2>
           <p className="mt-3 text-[#58761B]">
             Comprehensive, secure and scalable services for exam delivery, training and facility operations.
           </p>
-        </div>
+        </motion.div>
       )}
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">

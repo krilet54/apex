@@ -196,33 +196,74 @@ export function AboutSnapshot() {
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative">
           <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-[#D99201]/18 via-transparent to-[#1A3F22]/15 blur-[60px]" aria-hidden />
           <div className="relative bg-white/95 rounded-[32px] p-10 shadow-xl border border-[#EFE9DB]">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#F2C94C]/60 bg-[#FFF8E1] px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#A97400]">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="inline-flex items-center gap-2 rounded-full border border-[#F2C94C]/60 bg-[#FFF8E1] px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#A97400]"
+            >
               Since 2011
-            </div>
-            <p className="mt-4 text-xs uppercase tracking-[0.35em] text-[#58761B]">Mission-ready delivery partner</p>
-            <h2 className="mt-4 text-[40px] leading-[1.15] font-semibold text-[#1A3F22]">Who We Are</h2>
-            <p className="mt-6 text-lg text-[#1C4B26] leading-relaxed about-quote">
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+              className="mt-4 text-xs uppercase tracking-[0.35em] text-[#58761B]"
+            >
+              Mission-ready delivery partner
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.55, ease: 'easeOut', delay: 0.18 }}
+              className="mt-4 text-[40px] leading-[1.15] font-semibold text-[#1A3F22]"
+            >
+              Who We Are
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
+              className="mt-6 text-lg text-[#1C4B26] leading-relaxed about-quote"
+            >
               “While our foundation lies in defence and government IT projects, our capabilities extend far beyond.
               Apex delivers client-focused, innovative and mission-critical infrastructure designed with precision and operational excellence.”
-            </p>
+            </motion.p>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              {signatureStats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-[#F2C94C]/40 bg-[#FFFBF4] px-4 py-5 text-center">
+              {signatureStats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.45, ease: 'easeOut', delay: 0.15 + index * 0.08 }}
+                  className="rounded-2xl border border-[#F2C94C]/40 bg-[#FFFBF4] px-4 py-5 text-center"
+                >
                   <p className="text-2xl font-semibold text-[#905A01]">{stat.value}</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.25em] text-[#58761B]">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
+              className="mt-8 flex flex-wrap gap-4"
+            >
               <Link to="/about" className="btn-base btn-primary">
                 Learn More About Apex
               </Link>
               <Link to="/contact" className="btn-base btn-outline">
                 Speak With Our Team
               </Link>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 

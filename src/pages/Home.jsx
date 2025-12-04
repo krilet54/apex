@@ -33,7 +33,7 @@ export default function Home(){
       <motion.section
         {...sectionMotion}
         transition={sectionTransition}
-        className="cta-gradient text-white py-12"
+        className="bg-[#0F2214] text-white py-12"
       >
         <div className="container mx-auto px-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
