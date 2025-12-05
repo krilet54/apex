@@ -15,16 +15,15 @@ const ICONS = {
 export default function ServiceList({ showHeading = true, withContainer = true }) {
   const navigate = useNavigate()
 
+  const fadeDown = {
+    hidden: { opacity: 0, y: 12 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.44, ease: 'easeOut' } }
+  }
+
   const content = (
     <>
       {showHeading && (
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
+        <motion.div className="text-center" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.6 }} variants={fadeDown}>
           <h2 className="text-3xl font-semibold text-[#1A3F22]">Our Services</h2>
           <p className="mt-3 text-[#58761B]">
             Comprehensive, secure and scalable services for exam delivery, training and facility operations.
@@ -35,15 +34,14 @@ export default function ServiceList({ showHeading = true, withContainer = true }
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
         {services.map((s, index) => {
           const Icon = ICONS[s.id] || Clipboard
-          const transition = { duration: 0.6, ease: 'easeOut', delay: index * 0.08 }
           return (
             <motion.div
               key={s.id}
               className="rounded-[28px] border border-[#E5DCCB] bg-white/90 backdrop-blur shadow-[0_15px_40px_rgba(10,31,17,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              initial={{ opacity: 0, y: 36 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              transition={transition}
+              variants={fadeDown}
             >
               <article
                 tabIndex={0}

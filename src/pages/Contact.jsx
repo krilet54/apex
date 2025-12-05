@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { motion } from 'framer-motion'
 import { Phone, Mail, Clock, MapPin } from 'lucide-react'
 import PageContainer from '../components/PageContainer'
 import ContactForm from '../components/ContactForm'
@@ -33,6 +34,16 @@ export default function Contact() {
     document.title = 'Apex — Contact'
   }, [])
 
+  const popup = {
+    hidden: { opacity: 0, y: 8, scale: 0.98 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.36, ease: 'easeOut' } }
+  }
+
+  const panel = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.42, ease: 'easeOut' } }
+  }
+
   return (
     <PageContainer>
       <section className="py-16">
@@ -52,31 +63,30 @@ export default function Contact() {
               </>
             )
 
-            if (card.href) {
-              return (
-                <a
-                  key={card.label}
-                  href={card.href}
-                  className="rounded-[24px] border border-[#E5DCCB] bg-white p-6 shadow-sm flex flex-col gap-2 hover:border-[#D99201]/60 transition"
-                >
-                  {content}
-                </a>
-              )
-            }
+            const commonProps = { initial: 'hidden', whileInView: 'show', viewport: { once: true, amount: 0.2 }, variants: popup }
 
+            // Use a motion.div wrapper for all cards so the animation is identical.
+            // Keep an inner anchor for clickable items so links still work.
             return (
-              <div
+              <motion.div
                 key={card.label}
                 className="rounded-[24px] border border-[#E5DCCB] bg-white p-6 shadow-sm flex flex-col gap-2"
+                {...commonProps}
               >
-                {content}
-              </div>
+                {card.href ? (
+                  <a href={card.href} className="w-full h-full block">
+                    {content}
+                  </a>
+                ) : (
+                  content
+                )}
+              </motion.div>
             )
           })}
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[28px] border border-[#E5DCCB] bg-white p-8 shadow-sm">
+          <motion.div className="rounded-[28px] border border-[#E5DCCB] bg-white p-8 shadow-sm" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={panel}>
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#8A6A2E]">
               <MapPin className="h-4 w-4 text-[#D99201]" />
               Office Location
@@ -86,12 +96,12 @@ export default function Contact() {
             <div className="mt-6 rounded-2xl overflow-hidden border border-[#E5DCCB]">
               <LocationMap />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="rounded-[28px] border border-[#E5DCCB] bg-white p-8 shadow-sm">
+          <motion.div className="rounded-[28px] border border-[#E5DCCB] bg-white p-8 shadow-sm" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={panel}>
             <p className="text-xs uppercase tracking-[0.3em] text-[#8A6A2E]">Send a message</p>
             <ContactForm className="mt-6" />
-          </div>
+          </motion.div>
         </div>
       </section>
     </PageContainer>
