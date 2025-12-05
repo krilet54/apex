@@ -1,9 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Camera, ShieldCheck, CheckCircle, Star, Phone, Mail, Laptop, Users, BookOpen, Home, Monitor, UserCheck, Clipboard, Mic, Calendar, Video, Key, Droplet, Trash2 } from 'lucide-react'
 import services from '../data/services'
 import PageContainer from '../components/PageContainer'
+
+// Directional animation variants helper
+const dirVariants = (dir = 'up', dist = 12) => {
+  const d = dist
+  const showTrans = { transition: { duration: 0.95, ease: 'easeOut' } }
+  if (dir === 'left') return { hidden: { opacity: 0, x: -d }, show: { opacity: 1, x: 0, ...showTrans } }
+  if (dir === 'right') return { hidden: { opacity: 0, x: d }, show: { opacity: 1, x: 0, ...showTrans } }
+  if (dir === 'down') return { hidden: { opacity: 0, y: d }, show: { opacity: 1, y: 0, ...showTrans } }
+  return { hidden: { opacity: 0, y: -d }, show: { opacity: 1, y: 0, ...showTrans } }
+}
 
 export default function ServiceDetail(){
   const { slug } = useParams()
@@ -30,18 +40,18 @@ export default function ServiceDetail(){
     '--cream': '#F6EFE3'
   }
 
-  // framer-motion presets
+  // framer-motion presets with smoother, longer transitions
   const container = {
-    hidden: { opacity: 0, y: 8 },
-    show: { opacity: 1, y: 0, transition: { staggerChildren: 0.06, when: 'beforeChildren' } }
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.12, when: 'beforeChildren' } }
   }
 
   const card = {
-    hidden: { opacity: 0, y: 10, scale: 0.995 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }
+    hidden: { opacity: 0, y: 20, scale: 0.98 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.95, ease: 'easeOut' } }
   }
 
-  const float = { hidden: { y: 0 }, show: { y: [0, -6, 0], transition: { duration: 4.5, repeat: Infinity } } }
+  const float = { hidden: { y: 0 }, show: { y: [0, -8, 0], transition: { duration: 5, repeat: Infinity, ease: 'easeInOut' } } }
 
   // mapping for service-specific hero icon (uses `service.icon` from data)
   const ICONS = { Laptop, Users, BookOpen, ShieldCheck, Home }
@@ -72,32 +82,36 @@ export default function ServiceDetail(){
 
         <div className="relative" style={{ minHeight: '48vh' }}>
           <div className="max-w-6xl mx-auto px-6 h-full flex items-center">
-            <div className="max-w-3xl p-6 lg:p-12">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center w-16 h-16 rounded-md bg-[var(--amber)]/95">
+            <motion.div className="max-w-3xl p-6 lg:p-12" initial="hidden" whileInView="show" viewport={{ once: true }} variants={container}>
+              <motion.div className="flex items-center gap-4" variants={dirVariants('down', 16)}>
+                <motion.div className="flex items-center justify-center w-16 h-16 rounded-md bg-[var(--amber)]/95" variants={dirVariants('down', 16)}>
                   <ServiceIcon className="h-8 w-8 text-black" />
-                </div>
-                <motion.h1 layoutId={`title-${service.slug}`} className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                </motion.div>
+                <motion.h1 layoutId={`title-${service.slug}`} className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight" variants={dirVariants('down', 16)}>
                   {service.title}
                 </motion.h1>
-              </div>
+              </motion.div>
 
-              <motion.p variants={card} className="mt-4 text-lg max-w-prose opacity-95 text-white/95">
+              <motion.p variants={dirVariants('down', 16)} className="mt-4 text-lg max-w-prose opacity-95 text-white/95">
                 {service.description}
               </motion.p>
 
-              <motion.div variants={card} transition={{delay:0.08}} className="mt-6 flex flex-wrap gap-3">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[var(--amber)] text-black font-semibold shadow-sm hover:brightness-95 transition">
-                  <Phone className="h-4 w-4" />
-                  Contact Us
-                </Link>
+              <motion.div variants={card} transition={{delay:0.12}} className="mt-6 flex flex-wrap gap-3">
+                <motion.div variants={dirVariants('down', 8)} transition={{duration: 0.8, ease: 'easeOut'}}>
+                  <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-[var(--amber)] text-black font-semibold shadow-sm hover:brightness-95 transition">
+                    <Phone className="h-4 w-4" />
+                    Contact Us
+                  </Link>
+                </motion.div>
 
-                <Link to="/services" className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-white/20 text-white/90 hover:bg-white/5 transition">
-                  <Mail className="h-4 w-4" />
-                  Back to services
-                </Link>
+                <motion.div variants={dirVariants('down', 10)} transition={{duration: 0.85, ease: 'easeOut'}}>
+                  <Link to="/services" className="inline-flex items-center gap-2 px-5 py-3 rounded-md border border-white/20 text-white/90 hover:bg-white/5 transition">
+                    <Mail className="h-4 w-4" />
+                    Back to services
+                  </Link>
+                </motion.div>
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.header>
@@ -109,67 +123,113 @@ export default function ServiceDetail(){
         <main className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
           {/* Left: Article */}
-          <article className="lg:col-span-2">
-            <h2 className="text-2xl font-bold text-[var(--pine)] mb-3">Overview</h2>
-            <p className="text-slate-700 mb-6">{service.longDescription ?? service.description}</p>
+          <motion.article className="lg:col-span-2" initial="hidden" whileInView="show" viewport={{ once: true }} variants={container}>
+            <motion.h2 className="text-2xl font-bold text-[var(--pine)] mb-3" variants={dirVariants('left', 12)}>Overview</motion.h2>
+            <motion.p className="text-slate-700 mb-6" variants={dirVariants('left', 12)}>{service.longDescription ?? service.description}</motion.p>
 
             {/* Features (simple list, no card wrappers) */}
-            <section className="mb-8">
-              <h3 className="text-xl font-semibold mb-3">What we cover</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none">
+            <motion.section className="mb-8" variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
+              <motion.h3 className="text-xl font-semibold mb-3" variants={dirVariants('left', 10)}>What we cover</motion.h3>
+              <motion.ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none" variants={{hidden: {}, show: { transition: { staggerChildren: 0.08 } }}}>
                 {service.features.map((f, i) => {
                   const iconName = service.featureIcons?.[i]
                   const Icon = iconName ? FEATURE_ICONS[service.featureIcons?.[i]] || Camera : Camera
                   return (
-                    <li key={i} className="flex items-center gap-3">
-                      <div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--pine)] text-white">
+                    <motion.li key={i} className="flex items-center gap-3" variants={dirVariants('left', 8)}>
+                      <motion.div className="w-10 h-10 flex items-center justify-center rounded-md bg-[var(--pine)] text-white" variants={{ hidden: { scale: 0.8 }, show: { scale: 1, transition: { duration: 0.5 } } }}>
                         <Icon className="h-5 w-5" />
-                      </div>
+                      </motion.div>
                       <div className="text-slate-800">{f}</div>
-                    </li>
+                    </motion.li>
                   )
                 })}
-              </ul>
-            </section>
+              </motion.ul>
+            </motion.section>
 
             {/* Details / FAQ (plain sections) */}
-            <section className="mb-8">
-              <h3 className="text-xl font-semibold mb-3">Details</h3>
-              <div className="space-y-4">
-                {details.map((d, idx) => (
-                  <details key={idx} className="group" open={idx === 0}>
-                    <summary className="cursor-pointer font-medium">{d.q}</summary>
-                    <p className="mt-2 text-sm text-slate-700">{d.a}</p>
-                  </details>
-                ))}
-              </div>
-            </section>
-          </article>
+            <motion.section className="mb-8" variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}>
+              <motion.h3 className="text-xl font-semibold mb-3" variants={dirVariants('left', 10)}>Details</motion.h3>
+              <motion.div className="space-y-4" variants={{hidden: {}, show: { transition: { staggerChildren: 0.08 } }}}>
+
+                  {details.map((d, idx) => {
+                    const DetailItem = ({ item, defaultOpen = false, id }) => {
+                      const [open, setOpen] = useState(defaultOpen)
+                      const contentId = `detail-content-${id}`
+                      return (
+                        <motion.div key={id} className="group" variants={card}>
+                          <motion.button
+                            type="button"
+                            onClick={() => setOpen(o => !o)}
+                            className="w-full flex items-center gap-3 justify-start cursor-pointer font-medium"
+                            variants={dirVariants('left', 6)}
+                            aria-expanded={open}
+                            aria-controls={contentId}
+                          >
+                            <motion.span
+                              animate={{ rotate: open ? 90 : 0 }}
+                              transition={{ duration: 0.28 }}
+                              className="ml-0"
+                              style={{ display: 'inline-flex' }}
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </motion.span>
+
+                            <span>{item.q}</span>
+                          </motion.button>
+
+                          <AnimatePresence initial={false}>
+                            {open && (
+                              <motion.div
+                                id={contentId}
+                                key="content"
+                                initial={{ opacity: 0, y: 6 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 6 }}
+                                transition={{ duration: 0.32 }}
+                                className="mt-2 text-sm text-slate-700"
+                                role="region"
+                                aria-labelledby={contentId + '-label'}
+                              >
+                                {item.a}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      )
+                    }
+
+                    return <DetailItem key={idx} id={idx} item={d} defaultOpen={idx === 0} />
+                  })}
+                </motion.div>
+            </motion.section>
+          </motion.article>
 
           {/* Right: Summary / Contact (simpler) */}
-          <aside className="lg:col-span-1">
+          <motion.aside className="lg:col-span-1" initial="hidden" whileInView="show" viewport={{ once: true }} variants={container}>
             <div className="sticky top-20">
-              <div className="p-4">
-                <h4 className="text-sm text-slate-500">Service</h4>
-                <p className="font-semibold text-[var(--pine)]">{service.title}</p>
+              <motion.div className="p-4" variants={card}>
+                <motion.h4 className="text-sm text-slate-500" variants={dirVariants('down', 12)}>Service</motion.h4>
+                <motion.p className="font-semibold text-[var(--pine)]" variants={dirVariants('down', 14)}>{service.title}</motion.p>
 
-                <dl className="mt-4 text-sm text-slate-600">
-                  <div>
+                <motion.dl className="mt-4 text-sm text-slate-600" variants={{hidden: {}, show: { transition: { staggerChildren: 0.08 } }}}>
+                  <motion.div variants={dirVariants('down', 10)}>
                     <dt className="font-medium text-slate-700">Category</dt>
                     <dd className="mt-1">{service.category ?? 'General'}</dd>
-                  </div>
-                  <div className="mt-2">
+                  </motion.div>
+                  <motion.div className="mt-2" variants={dirVariants('down', 10)}>
                     <dt className="font-medium text-slate-700">Delivery</dt>
                     <dd className="mt-1">{service.delivery ?? 'Flexible'}</dd>
-                  </div>
-                </dl>
+                  </motion.div>
+                </motion.dl>
 
-                <div className="mt-4">
-                  <Link to="/contact" className="w-full block text-center px-4 py-2 rounded-md bg-[var(--pine)] text-white font-semibold">Contact Us</Link>
-                </div>
-              </div>
+                <motion.div className="mt-4" variants={dirVariants('down', 8)}>
+                  <Link to="/contact" className="w-full block text-center px-4 py-2 rounded-md bg-[var(--pine)] text-white font-semibold hover:bg-[var(--pine)]/90 transition">Contact Us</Link>
+                </motion.div>
+              </motion.div>
             </div>
-          </aside>
+          </motion.aside>
 
         </main>
 
