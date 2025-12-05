@@ -476,14 +476,17 @@ export function LocationPreview() {
 export function PrimaryCTA() {
   const primaryHeadline = useTypedText('“Let’s Build Infrastructure That Performs Under Pressure.”', { speed: 60, delay: 240 })
   return (
-    <section className="bg-[#102616] py-20 text-white">
+    <section className="relative bg-white pb-32 pt-24 text-[#0F2A16] lg:pb-40 lg:pt-32">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="mt-4 text-3xl font-semibold">{primaryHeadline}</h2>
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <h2 className="mt-4 text-3xl font-semibold text-[#0F2A16] lg:text-4xl">{primaryHeadline}</h2>
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link to="/contact" className="btn-base btn-primary">
             Contact Apex
           </Link>
-          <Link to="/our-centre" className="btn-base btn-outline-light">
+          <Link
+            to="/our-centre"
+            className="btn-base border border-[#0F2A16] text-[#0F2A16] hover:bg-[#0F2A16] hover:text-white"
+          >
             Schedule a Visit
           </Link>
         </div>

@@ -90,10 +90,10 @@ export default function Home(){
         <LocationPreview />
       </motion.div>
       <motion.div {...sectionMotion} transition={sectionTransition}>
-        <PrimaryCTA />
+        <QuickContactStrip />
       </motion.div>
       <motion.div {...sectionMotion} transition={sectionTransition}>
-        <QuickContactStrip />
+        <PrimaryCTA />
       </motion.div>
     </div>
   )
