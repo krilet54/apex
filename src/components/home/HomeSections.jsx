@@ -39,15 +39,14 @@ const trustLogos = [
 ]
 
 const infrastructureStats = [
-  { value: 172, suffix: '+', label: 'Workstations' },
-  { value: 7, suffix: '', label: 'Examination Labs' },
-  { value: 175, suffix: '', label: 'Candidate Waiting Capacity' },
-  { value: 40, suffix: ' kVA', label: 'UPS Power Backup' }
+  { value: 181, suffix: '', label: 'Workstations' },
+  { value: 8, suffix: '', label: 'Examination Labs' },
+  { value: 181, suffix: '+', label: 'Candidate Waiting Capacity' }
 ]
 
 const galleryItems = [
   { label: 'Examination Lab', accent: 'Labs', image: labImage },
-  { label: 'Waiting Lounge', accent: 'Waiting', image: waitingRoomImage },
+  { label: 'Waiting Room', accent: '181+ Waiting Capacity', image: waitingRoomImage },
   { label: 'Workstations', accent: 'Desks', image: desksImage }
 ]
 
@@ -55,13 +54,14 @@ const centreHighlights = [
   'High-speed internet + backup line',
   'Fully air-conditioned labs',
   'Advanced CCTV surveillance',
-  'Secure entry protocols'
+  'Secure entry protocols',
+  'Dedicated waiting room for 181+ candidates'
 ]
 
 const signatureStats = [
-  { value: '172+', label: 'Workstations online' },
-  { value: '7', label: 'Exam labs' },
-  { value: '40 kVA', label: 'UPS power reserve' }
+  { value: '181', label: 'Workstations online' },
+  { value: '8', label: 'Exam labs' },
+  { value: '2 x 20kVA', label: 'UPS power reserve' }
 ]
 
 const differentiators = [
@@ -196,23 +196,14 @@ export function AboutSnapshot() {
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative">
           <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-[#D99201]/18 via-transparent to-[#1A3F22]/15 blur-[60px]" aria-hidden />
           <div className="relative bg-white/95 rounded-[32px] p-10 shadow-xl border border-[#EFE9DB]">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="inline-flex items-center gap-2 rounded-full border border-[#F2C94C]/60 bg-[#FFF8E1] px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.4em] text-[#A97400]"
-            >
-              Since 2011
-            </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-              className="mt-4 text-xs uppercase tracking-[0.35em] text-[#58761B]"
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="inline-flex text-xs uppercase tracking-[0.35em] text-[#58761B]"
             >
-              Mission-ready delivery partner
+              Who We Are
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 18 }}
@@ -221,7 +212,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.55, ease: 'easeOut', delay: 0.18 }}
               className="mt-4 text-[40px] leading-[1.15] font-semibold text-[#1A3F22]"
             >
-              Who We Are
+              Apex Examination & Training Centre
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -230,8 +221,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
               className="mt-6 text-lg text-[#1C4B26] leading-relaxed about-quote"
             >
-              “While our foundation lies in defence and government IT projects, our capabilities extend far beyond.
-              Apex delivers client-focused, innovative and mission-critical infrastructure designed with precision and operational excellence.”
+              APEX Examination & Training Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within Guru Harkrishan Public School, Vasant Vihar. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment providers.
             </motion.p>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -315,7 +305,7 @@ export function InfrastructureStats() {
           <h2 className="mt-3 text-3xl font-semibold">Visual proof through numbers</h2>
         </motion.div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
           {infrastructureStats.map((stat) => (
             <motion.div
               key={stat.label}
@@ -405,7 +395,7 @@ export function WhyChooseApex() {
       <div className="container mx-auto px-6">
         <div className="text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-[#58761B]">Why Choose Apex</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Positioned for mission readiness</h2>
+          <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Operationally ready for secure examination delivery</h2>
           <p className="mt-2 text-[#58761B]">Five reasons partners trust us for high-stakes delivery.</p>
         </div>
 
@@ -462,7 +452,7 @@ export function LocationPreview() {
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="w-full overflow-hidden rounded-3xl shadow-2xl border border-[#1A3F22]/10">
           <iframe
             title="Apex Centre Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3498.648421731851!2d77.15011617549706!3d28.5639434756854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1de29010e28f%3A0xeaa1efc9ffc13!2sGuru%20Harkrishan%20Public%20School!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            src="https://maps.google.com/maps?q=Guru%20Harkrishan%20Public%20School%2C%20Vasant%20Vihar%2C%20New%20Delhi%20%E2%80%93%20110057&t=&z=15&ie=UTF8&iwloc=B&output=embed"
             className="h-[360px] w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -474,14 +464,14 @@ export function LocationPreview() {
 }
 
 export function PrimaryCTA() {
-  const primaryHeadline = useTypedText('“Let’s Build Infrastructure That Performs Under Pressure.”', { speed: 60, delay: 240 })
+  const primaryHeadline = useTypedText('Purpose-built examination infrastructure for reliability, precision, and scale.', { speed: 60, delay: 240 })
   return (
     <section className="relative bg-white pb-32 pt-24 text-[#0F2A16] lg:pb-40 lg:pt-32">
       <div className="container mx-auto px-6 text-center">
         <h2 className="mt-4 text-3xl font-semibold text-[#0F2A16] lg:text-4xl">{primaryHeadline}</h2>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link to="/contact" className="btn-base btn-primary">
-            Contact Apex
+            Contact Our Team
           </Link>
           <Link
             to="/our-centre"
@@ -496,7 +486,7 @@ export function PrimaryCTA() {
 }
 
 export function QuickContactStrip() {
-  const quickContactHeadline = useTypedText('Talk to our infrastructure desk', { speed: 55, delay: 200 })
+  const quickContactHeadline = useTypedText('Talk to our Team', { speed: 55, delay: 200 })
   return (
     <section className="bg-gradient-to-r from-[#FDF6EA] to-white py-16">
       <div className="container mx-auto px-6">

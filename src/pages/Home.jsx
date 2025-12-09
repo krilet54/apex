@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServiceList from '../components/ServiceList'
 import {
-  TrustStrip,
   AboutSnapshot,
   InfrastructureStats,
   CentrePreview,
@@ -47,9 +46,12 @@ export default function Home(){
             <p className="mt-2 text-white/70 max-w-2xl">
               Trusted by international boards and government agencies.
             </p>
+            <p className="mt-2 text-white/80 max-w-2xl">
+              To deliver secure, high-quality examination and training solutions with integrity and precision.
+            </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact" className="btn-base btn-primary text-center">Speak to Programme Office</Link>
+            <Link to="/contact" className="btn-base btn-primary text-center">Contact Our Team</Link>
             <a
               href="/apex-brochure.pdf"
               className="btn-base btn-outline-light text-center"
@@ -82,9 +84,6 @@ export default function Home(){
       </motion.div>
       <motion.div {...sectionMotion} transition={sectionTransition}>
         <WhyChooseApex />
-      </motion.div>
-      <motion.div {...sectionMotion} transition={sectionTransition}>
-        <TrustStrip />
       </motion.div>
       <motion.div {...sectionMotion} transition={sectionTransition}>
         <LocationPreview />

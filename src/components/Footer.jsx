@@ -23,7 +23,7 @@ export default function Footer() {
 
       <div className="relative container mx-auto px-6 py-16 lg:py-20 grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         <div className="space-y-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-white/70">Apex Infrastructure</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-white/70">Apex Examination Services</p>
           <div className="rounded-3xl bg-white/95 p-6 shadow-2xl shadow-[#8A4E00]/35 border border-white/60">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-6">
               <img src={logoPrimary} alt="Apex crest" className="h-11 w-auto object-contain sm:h-12" loading="lazy" />
@@ -31,7 +31,7 @@ export default function Footer() {
               <img src={logoSecondary} alt="Apex emblem" className="h-11 w-auto object-contain sm:h-12" loading="lazy" />
             </div>
             <p className="mt-5 text-sm text-[#1A1A1A]">
-              Government-grade examination centres, manpower and secure operations delivered under one programme office in New Delhi.
+              Examination infrastructure, trained manpower, and secure operations delivered through a unified centre.
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       <div className="relative border-t border-white/15 py-5 text-center text-xs text-white/75 space-x-1">
-        <span>© {new Date().getFullYear()} Apex Infrastructure Services. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Apex Examination Services. All rights reserved.</span>
         <span>
           Made by{' '}
           <a

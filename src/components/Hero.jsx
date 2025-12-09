@@ -68,14 +68,13 @@ export default function Hero() {
           <div className="max-w-2xl p-6 lg:p-12" style={{ marginTop: '15px' }}>
             <motion.h1
               className="text-4xl lg:text-[56px] font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)]"
-              aria-label="Government-grade Examination & Training Facilities"
+              aria-label="World Class Examination & Training Facilities"
               {...headingAnimation}
             >
-              Government-grade Examination & Training Facilities
+              World Class Examination & Training Facilities
             </motion.h1>
             <p className="mt-4 text-white/90 max-w-xl">
-              Secure, reliable and fully managed exam delivery with on-site support.
-              Trusted by institutional clients for high-stakes assessments.
+              To deliver secure, high-quality examination and training solutions with integrity and precision.
             </p>
 
             {/* Buttons */}
