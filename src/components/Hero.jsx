@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import heroImg1 from '../assets/heroimg1.png'
 import heroImg2 from '../assets/heroimg2.png'
@@ -39,8 +38,8 @@ export default function Hero() {
   return (
     <section className="relative bg-white overflow-hidden">
       {/* Background Slider */}
-      <div className="absolute inset-0 overflow-hidden" aria-hidden>
-        <AnimatePresence mode="wait">
+      <div className="absolute inset-0 overflow-hidden bg-[#0F2214]" aria-hidden>
+        <AnimatePresence mode="sync" initial={false}>
           <motion.div
             key={currentSlide.image}
             className="absolute inset-0"
@@ -64,29 +63,8 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative" style={{ minHeight: 'calc(100vh - 84px)' }}>
-        <div className="container mx-auto px-6 h-full flex items-center">
-          <div className="max-w-2xl p-6 lg:p-12" style={{ marginTop: '15px' }}>
-            <motion.h1
-              className="text-4xl lg:text-[56px] font-bold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)]"
-              aria-label="World Class Examination & Training Facilities"
-              {...headingAnimation}
-            >
-              World Class Examination & Training Facilities
-            </motion.h1>
-            <p className="mt-4 text-white/90 max-w-xl">
-              To deliver secure, high-quality examination and training solutions with integrity and precision.
-            </p>
-
-            {/* Buttons */}
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/services" className="btn-base btn-primary">
-                Explore Services
-              </Link>
-              <Link to="/contact" className="btn-base btn-outline-light">
-                Contact Us
-              </Link>
-            </div>
-          </div>
+        <div className="container mx-auto px-6 h-full flex items-center" aria-hidden>
+          <div className="max-w-2xl p-6 lg:p-12" />
         </div>
       </div>
 

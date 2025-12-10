@@ -15,9 +15,9 @@ const contactCards = [
   },
   {
     label: 'Email desk',
-    value: 'tusharsalesindia@gmail.com',
+    value: 'apexexamcentre@gmail.com',
     subcopy: 'We respond within 1 business day',
-    href: 'mailto:tusharsalesindia@gmail.com',
+    href: 'mailto:apexexamcentre@gmail.com',
     icon: Mail
   },
   {
@@ -54,7 +54,7 @@ export default function Contact() {
             const Icon = card.icon
             const content = (
               <>
-                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#8A6A2E]">
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#8A6A2E]">
                   <Icon className="h-4 w-4 text-[#D99201]" />
                   {card.label}
                 </div>
@@ -87,7 +87,7 @@ export default function Contact() {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <motion.div className="rounded-[28px] border border-[#E5DCCB] bg-white p-8 shadow-sm" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={panel}>
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#8A6A2E]">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#8A6A2E]">
               <MapPin className="h-4 w-4 text-[#D99201]" />
               Office Location
             </div>
@@ -99,7 +99,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.div className="rounded-[28px] border border-[#E5DCCB] bg-white p-8 shadow-sm" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={panel}>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#8A6A2E]">Send a message</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8A6A2E]">Send a message</p>
             <ContactForm className="mt-6" />
           </motion.div>
         </div>

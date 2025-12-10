@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
 import about_img from '../assets/about_apex.png'
-import lab_img from '../assets/images/examination lab.png'
 
 // helper to create directional variants
 const dirVariants = (dir = 'up', dist = 12) => {
@@ -13,25 +12,6 @@ const dirVariants = (dir = 'up', dist = 12) => {
   if (dir === 'down') return { hidden: { opacity: 0, y: d }, show: { opacity: 1, y: 0 } }
   return { hidden: { opacity: 0, y: -d }, show: { opacity: 1, y: 0 } }
 }
-
-const capabilityColumns = [
-  {
-    title: 'Purpose-Built Facilities',
-    copy: 'Designed for secure, large-scale examination delivery'
-  },
-  {
-    title: 'Trained Operational Teams',
-    copy: 'Invigilation, IT, and on-site support staff'
-  },
-  {
-    title: 'Redundant Systems',
-    copy: 'Power, network, and operational continuity ensured'
-  },
-  {
-    title: 'Compliance-Ready Setup',
-    copy: 'Aligned with global testing and security standards'
-  }
-]
 
 const focusAreas = [
   'Secure Examination Operations',
@@ -77,40 +57,6 @@ export default function About() {
                 Trusted Infrastructure Partners for High-Stakes Examination Programmes
               </motion.h1>
 
-              <motion.p
-                className="mt-4 text-sm lg:text-base text-white/80 leading-relaxed"
-                variants={dirVariants('down', 14)}
-                transition={{ duration: 0.9, ease: 'easeOut' }}
-              >
-                APEX operates at the intersection of technology, infrastructure, and disciplined operations to support the secure delivery of high-stakes examinations. Our centre is purpose-designed, professionally managed, and supported by trained teams, enabling consistent, reliable assessment delivery for national and international examination bodies.
-              </motion.p>
-
-              <motion.div
-                className="mt-10 overflow-x-auto"
-                variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-                transition={{ duration: 0.6 }}
-              >
-                <table className="w-full min-w-[520px] border border-white/20 text-left rounded-2xl overflow-hidden">
-                  <tbody>
-                    {capabilityColumns.map((item, i) => (
-                      <motion.tr
-                        key={item.title}
-                        variants={dirVariants('left', 10)}
-                        transition={{ duration: 0.45, delay: i * 0.08 }}
-                        className={i === 0 ? 'bg-white/5' : 'border-t border-white/15 bg-white/5'}
-                      >
-                        <th className="w-1/3 px-5 py-4 align-top text-xs uppercase tracking-[0.35em] text-white/70">
-                          {item.title}
-                        </th>
-                        <td className="px-5 py-4 text-sm text-white/90">
-                          {item.copy}
-                        </td>
-                      </motion.tr>
-                    ))}
-                  </tbody>
-                </table>
-              </motion.div>
-
               <motion.div className="mt-8 flex flex-wrap gap-4" variants={dirVariants('down', 12)} transition={{ duration: 0.55 }}>
                 <Link to="/contact" className="btn-base btn-primary">
                   Engage Apex
@@ -134,17 +80,6 @@ export default function About() {
                 transition={{ duration: 0.9, ease: 'easeOut' }}
                 style={{ willChange: 'transform,opacity' }}
               />
-              <motion.img
-                src={lab_img}
-                alt="Examination lab overview"
-                className="relative rounded-[28px] border border-white/20 shadow-2xl w-full object-cover h-64"
-                loading="lazy"
-                initial={{ opacity: 0, x: 40, scale: 0.98 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.9, ease: 'easeOut', delay: 0.05 }}
-                style={{ willChange: 'transform,opacity' }}
-              />
             </motion.div>
           </motion.div>
         </div>
@@ -154,20 +89,20 @@ export default function About() {
         <motion.section className="mt-16 rounded-[36px] border border-[#E8E0CF] bg-white p-10 lg:p-12" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} transition={{ duration: 0.6, ease: 'easeOut' }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Vision Statement</motion.p>
+              <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Vision Statement</motion.p>
               <motion.h2 className="mt-4 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 12)} transition={{ duration: 0.6 }}>To be recognised by our clients as the most dependable and proficient partner in examination and assessment delivery.</motion.h2>
               <motion.p className="mt-4 text-[#4C6B37] leading-relaxed" variants={dirVariants('down', 12)} transition={{ duration: 0.9 }}>
                 We combine disciplined execution and thoughtful innovation to achieve consistently reliable outcomes.
               </motion.p>
             </div>
-            <div className="grid gap-6 text-sm text-[#1C4B26]">
+            <div className="grid gap-6 text-[#1C4B26]">
               <motion.div className="border-l-2 border-[#D99201] pl-5" variants={dirVariants('right', 8)} transition={{ duration: 0.55 }}>
-                <p className="uppercase tracking-[0.3em] text-xs text-[#9F6B1F]">Mission</p>
-                <p className="mt-2">Secure, high-quality examination and training delivery.</p>
+                <p className="uppercase tracking-[0.3em] text-sm font-semibold text-[#9F6B1F]">Mission</p>
+                <p className="mt-3 text-lg font-semibold">Secure, high-quality examination and training delivery.</p>
               </motion.div>
               <motion.div className="border-l-2 border-[#1A3F22] pl-5" variants={dirVariants('right', 8)} transition={{ duration: 0.6, delay: 0.06 }}>
-                <p className="uppercase tracking-[0.3em] text-xs text-[#1A3F22]">Ethos</p>
-                <p className="mt-2">Operate with discipline, transparency, and responsible governance.</p>
+                <p className="uppercase tracking-[0.3em] text-sm font-semibold text-[#1A3F22]">Ethos</p>
+                <p className="mt-3 text-lg font-semibold">Operate with discipline, transparency, and responsible governance.</p>
               </motion.div>
             </div>
           </div>
@@ -175,17 +110,17 @@ export default function About() {
 
         <motion.section className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start" initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
           <div>
-            <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Who we are</motion.p>
+            <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Who we are</motion.p>
             <motion.h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>Professionally managed examination and training services.</motion.h2>
-            <motion.p className="mt-4 text-[#4C6B37] leading-relaxed" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
-              APEX Examination & Training Centre is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
+            <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
+              APEX Training and Examination Centre is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
             </motion.p>
-            <motion.p className="mt-4 text-[#4C6B37] leading-relaxed" variants={dirVariants('down', 10)} transition={{ duration: 0.95, delay: 0.04 }}>
+            <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.95, delay: 0.04 }}>
               Operating from a purpose-designed facility in Vasant Vihar, New Delhi, APEX combines technology-enabled infrastructure, trained operational teams, and structured processes to meet the requirements of national and international examination bodies, academic institutions, and corporate assessment partners.
             </motion.p>
           </div>
           <motion.div className="rounded-[30px] bg-[#F8F4EA] p-8 border border-[#E5DCCB]" initial={{ opacity: 0, x: 8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <p className="text-xs uppercase tracking-[0.35em] text-[#9F6B1F]">Focus areas</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#9F6B1F]">Focus areas</p>
             <motion.ul className="mt-4 space-y-3 text-sm text-[#1C4B26]" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
               {focusAreas.map((item, idx) => (
                 <motion.li key={item} variants={{ hidden: { opacity: 0, x: 6 }, show: { opacity: 1, x: 0 } }} transition={{ duration: 0.45, delay: idx * 0.03 }}>{item}</motion.li>
@@ -194,24 +129,51 @@ export default function About() {
           </motion.div>
         </motion.section>
 
-        <motion.section className="mt-16 rounded-[32px] bg-gradient-to-br from-[#102616] to-[#0B1F13] text-white p-10 lg:p-12" initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.7 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div>
-              <motion.p className="text-xs uppercase tracking-[0.35em] text-white/60" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Delivery Principles</motion.p>
-              <motion.h2 className="mt-3 text-3xl font-semibold" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>Clear, controlled, and consistently executed examination delivery.</motion.h2>
-            </div>
-            <div>
-              <motion.ul className="space-y-4 text-sm text-white/80" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
-                {deliveryTenets.map((tenet, i) => (
-                  <motion.li key={tenet} variants={dirVariants('right', 8)} transition={{ duration: 0.45, delay: i * 0.03 }}>{tenet}</motion.li>
-                ))}
-              </motion.ul>
-            </div>
+        <motion.section
+          className="relative mt-16 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden text-white"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#06150D] via-[#0D2517] to-[#123220]" aria-hidden />
+          <div className="absolute -top-32 right-10 h-72 w-72 rounded-full bg-[#F2C94C]/10 blur-3xl" aria-hidden />
+          <div className="absolute -bottom-28 left-0 h-64 w-64 rounded-full bg-[#2AA56C]/10 blur-3xl" aria-hidden />
+
+          <div className="relative container mx-auto px-6 py-16 text-center">
+            <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>
+              Delivery Principles
+            </motion.p>
+            <motion.h2 className="mt-4 text-3xl font-semibold leading-snug text-white lg:text-[40px] max-w-4xl mx-auto" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>
+              Clear, controlled, and consistently executed examination delivery.
+            </motion.h2>
+            <motion.ul
+              className="mt-10 grid gap-5 text-sm text-white/85 max-w-5xl mx-auto sm:grid-cols-2 text-left"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+            >
+              {deliveryTenets.map((tenet, i) => (
+                <motion.li
+                  key={tenet}
+                  variants={dirVariants('up', 10)}
+                  transition={{ duration: 0.45, delay: i * 0.04 }}
+                  className="rounded-2xl border border-white/15 bg-white/5 p-5 shadow-[0_25px_60px_rgba(0,0,0,0.25)] backdrop-blur"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-[#F2C94C]" aria-hidden />
+                    <span className="leading-relaxed">{tenet}</span>
+                  </div>
+                </motion.li>
+              ))}
+            </motion.ul>
           </div>
         </motion.section>
 
         <motion.section className="mt-16 rounded-[32px] border border-[#EADFC8] bg-[#FFFAF2] p-10 text-center" initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
-          <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Engage With Us</motion.p>
+          <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Engage With Us</motion.p>
           <motion.h2 className="mt-4 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>Share your examination requirements. Receive a clear delivery plan.</motion.h2>
           <motion.p className="mt-3 text-[#4C6B37]" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
             Outline your scope, timelines, and assessment needs, and we will respond with a compliant, structured delivery approach.

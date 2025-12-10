@@ -36,22 +36,22 @@ export default function Home(){
       >
         <div className="container mx-auto px-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.35em] text-[#F2C94C]">Mission-ready Support</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#F2C94C]">Mission-ready Support</p>
             <h2
               className="mt-3 text-3xl font-semibold text-white"
-              aria-label="The Benchmark in Examination Services."
+              aria-label="World Class Examination & Training Facilities"
             >
-              The Benchmark in Examination Services.
+              World Class Examination & Training Facilities
             </h2>
             <p className="mt-2 text-white/70 max-w-2xl">
               Trusted by international boards and government agencies.
             </p>
             <p className="mt-2 text-white/80 max-w-2xl">
-              To deliver secure, high-quality examination and training solutions with integrity and precision.
+              To deliver secure, high-quality training and examination solutions with integrity and precision.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact" className="btn-base btn-primary text-center">Contact Our Team</Link>
+            <Link to="/contact" className="btn-base btn-primary text-center">Contact Us</Link>
             <a
               href="/apex-brochure.pdf"
               className="btn-base btn-outline-light text-center"
@@ -68,7 +68,7 @@ export default function Home(){
       </motion.div>
       <motion.section {...sectionMotion} transition={sectionTransition} className="bg-[#FFFAF2] py-16">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-xs uppercase tracking-[0.35em] text-[#58761B]">Service families</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">Service families</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Built to support every examination format.</h2>
           <p className="mt-2 text-[#4C6B37]">Infrastructure, manpower, security and support services operated from a single command desk.</p>
           <div className="mt-10">

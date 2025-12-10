@@ -121,7 +121,7 @@ export default function OurCentre() {
         <section className="mt-14">
           <motion.div className="flex items-center justify-between flex-wrap gap-4" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
             <div>
-              <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 8)}>Visual evidence</motion.p>
+              <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 8)}>Visual evidence</motion.p>
               <motion.h2 className="mt-2 text-2xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 12)}>What candidates experience on-site</motion.h2>
             </div>
             <motion.div variants={dirVariants('right', 10)}>
@@ -153,7 +153,7 @@ export default function OurCentre() {
         <section className="mt-16 rounded-[32px] border border-[#E8E0CF] bg-white p-10 lg:p-12">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-              <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Infrastructure snapshot</motion.p>
+              <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Infrastructure snapshot</motion.p>
               <motion.h2 className="mt-4 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 12)}>Designed for clarity, control, and reliable examination delivery.</motion.h2>
               <motion.p className="mt-4 text-[#4C6B37] leading-relaxed" variants={dirVariants('down', 10)}>
                 Each examination lab supports clear orientation, focused testing, and orderly candidate movement within fully air-conditioned, acoustically balanced environments. Adjacent waiting areas are designed to maintain smooth, congestion-free flow.
@@ -171,7 +171,7 @@ export default function OurCentre() {
 
         <section className="mt-14">
           <div className="rounded-[28px] border border-[#E5DCCB] p-6 lg:p-8 bg-white">
-            <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('left', 8)}>Photo journal</motion.p>
+            <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('left', 8)}>Photo journal</motion.p>
             <motion.div className="mt-6 grid gap-4 sm:grid-cols-2" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}>
               {galleryImages.map((image, idx) => (
                 <motion.div key={image.alt} className="relative overflow-hidden rounded-2xl" variants={dirVariants('up', 10)}>
@@ -215,7 +215,7 @@ export default function OurCentre() {
             <motion.div className="absolute left-0 right-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white text-sm" variants={dirVariants('left', 6)}>Live capture · Examination floor perspective</motion.div>
           </motion.div>
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-            <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Candidate Walkthrough</motion.p>
+            <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Candidate Walkthrough</motion.p>
             <motion.h3 className="mt-3 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 12)}>A clearly structured journey from arrival to exit.</motion.h3>
             <motion.ul className="mt-5 space-y-4 text-sm text-[#1C4B26]" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
               {walkthroughSteps.map((step, index) => (
@@ -231,7 +231,7 @@ export default function OurCentre() {
         <section className="mt-14 rounded-[32px] border border-[#EADFC8] bg-[#FFFAF2] p-10">
           <div className="grid gap-8 lg:grid-cols-2 items-center">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-              <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Access & Logistics</motion.p>
+              <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Access & Logistics</motion.p>
               <motion.h3 className="mt-3 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 12)}>Central, well-connected, and discreetly managed.</motion.h3>
               <motion.p className="mt-3 text-[#4C6B37]" variants={dirVariants('down', 8)}>
                 Easy access from Vasant Vihar and Munirka metro stations, RK Puram Sector 5 bus stop, and designated school entry points ensures orderly, predictable movement for candidates and staff.
@@ -245,7 +245,7 @@ export default function OurCentre() {
         </section>
 
         <section className="mt-16 rounded-[32px] bg-gradient-to-br from-[#102616] to-[#0B1F13] text-white p-10 text-center">
-          <motion.p className="text-xs uppercase tracking-[0.35em] text-white/60" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('down', 8)}>Visit us now</motion.p>
+          <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/60" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('down', 8)}>Visit us now</motion.p>
           <motion.h3 className="mt-4 text-3xl font-semibold" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('down', 12)}>Walk the floors, validate readiness in person.</motion.h3>
           <motion.p className="mt-3 text-white/80" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('down', 10)}>Schedule an on-site walkthrough with our team and experience the examination flow end-to-end.</motion.p>
           <motion.div className="mt-6 flex flex-wrap justify-center gap-4" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>

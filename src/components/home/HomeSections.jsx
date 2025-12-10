@@ -41,7 +41,8 @@ const trustLogos = [
 const infrastructureStats = [
   { value: 181, suffix: '', label: 'Workstations' },
   { value: 8, suffix: '', label: 'Examination Labs' },
-  { value: 181, suffix: '+', label: 'Candidate Waiting Capacity' }
+  { value: 181, suffix: '+', label: 'Candidate Waiting Capacity' },
+  { value: '2 x 20kVA', suffix: '', label: 'UPS Power Reserve', static: true }
 ]
 
 const galleryItems = [
@@ -201,7 +202,7 @@ export function AboutSnapshot() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="inline-flex text-xs uppercase tracking-[0.35em] text-[#58761B]"
+              className="inline-flex text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]"
             >
               Who We Are
             </motion.p>
@@ -212,16 +213,16 @@ export function AboutSnapshot() {
               transition={{ duration: 0.55, ease: 'easeOut', delay: 0.18 }}
               className="mt-4 text-[40px] leading-[1.15] font-semibold text-[#1A3F22]"
             >
-              Apex Examination & Training Centre
+              Apex Training and Examination Centre
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
-              className="mt-6 text-lg text-[#1C4B26] leading-relaxed about-quote"
+              className="mt-6 text-lg text-[#1C4B26] leading-relaxed text-justify about-quote"
             >
-              APEX Examination & Training Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within Guru Harkrishan Public School, Vasant Vihar. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment providers.
+              APEX Training and Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within Guru Harkrishan Public School, Vasant Vihar. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment providers.
             </motion.p>
 
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
@@ -235,7 +236,7 @@ export function AboutSnapshot() {
                   className="rounded-2xl border border-[#F2C94C]/40 bg-[#FFFBF4] px-4 py-5 text-center"
                 >
                   <p className="text-2xl font-semibold text-[#905A01]">{stat.value}</p>
-                  <p className="mt-1 text-xs uppercase tracking-[0.25em] text-[#58761B]">{stat.label}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#58761B]">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -284,7 +285,7 @@ export function AboutSnapshot() {
             </div>
           </div>
           <div className="rounded-2xl border border-[#D99201]/25 bg-white/95 p-6 shadow-lg">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#58761B]">Infrastructure Reel</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">Infrastructure Reel</p>
             <h3 className="mt-3 text-2xl font-semibold text-[#1A3F22]">Data Centre & Labs</h3>
             <p className="mt-2 text-sm text-[#1C4B26] leading-relaxed">
               Live capture from our secure examination floors showcasing monitoring, biometric access and dedicated control rooms.
@@ -301,11 +302,11 @@ export function InfrastructureStats() {
     <section className="bg-[#0A1A11] py-20 text-white">
       <div className="container mx-auto px-6">
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/60">Infrastructure Statistics</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Infrastructure Statistics</p>
           <h2 className="mt-3 text-3xl font-semibold">Visual proof through numbers</h2>
         </motion.div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {infrastructureStats.map((stat) => (
             <motion.div
               key={stat.label}
@@ -314,7 +315,7 @@ export function InfrastructureStats() {
               className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 text-center"
             >
               <div className="text-4xl font-semibold text-[#F2C94C]">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                {stat.static ? stat.value : <AnimatedCounter value={stat.value} suffix={stat.suffix} />}
               </div>
               <p className="mt-3 text-sm uppercase tracking-wide text-white/70">{stat.label}</p>
             </motion.div>
@@ -329,7 +330,7 @@ export function CentrePreview() {
   return (
     <section className="container mx-auto px-6 py-20">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#58761B]">Our Centre Preview</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#58761B]">Our Centre Preview</p>
         <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Purpose-built operations floor</h2>
         <p className="mt-2 text-[#58761B]">
           “Our state-of-the-art examination centre is designed to meet international standards of infrastructure,
@@ -355,7 +356,7 @@ export function CentrePreview() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/75 via-transparent to-transparent" />
               <div className="relative flex h-full flex-col justify-end p-6">
                 <div className="inline-flex flex-col gap-2 text-white drop-shadow-[0_12px_28px_rgba(0,0,0,0.55)]">
-                  <div className="flex items-center gap-3 text-xs uppercase tracking-[0.35em] text-white/80">
+                  <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
                     <MonitorSmartphone className="h-5 w-5 text-white" />
                     {item.accent}
                   </div>
@@ -394,7 +395,7 @@ export function WhyChooseApex() {
     <section className="bg-gradient-to-b from-[#FDF9F2] to-white py-20">
       <div className="container mx-auto px-6">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#58761B]">Why Choose Apex</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#58761B]">Why Choose Apex</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Operationally ready for secure examination delivery</h2>
           <p className="mt-2 text-[#58761B]">Five reasons partners trust us for high-stakes delivery.</p>
         </div>
@@ -428,7 +429,7 @@ export function LocationPreview() {
     <section className="container mx-auto px-6 py-20">
       <div className="grid gap-10 lg:grid-cols-2 items-center">
         <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
-          <p className="text-xs uppercase tracking-[0.3em] text-[#58761B]">Location Preview</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#58761B]">Location Preview</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Central & Connected</h2>
           <div className="mt-6 rounded-2xl border border-[#D99201]/20 bg-[#FBF6EC] p-6">
             <div className="flex items-start gap-3 text-[#1C4B26]">
@@ -492,7 +493,7 @@ export function QuickContactStrip() {
       <div className="container mx-auto px-6">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#58761B]">Quick Contact</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#58761B]">Quick Contact</p>
             <h2 className="mt-3 text-2xl font-semibold text-[#1A3F22]">{quickContactHeadline}</h2>
 
             <div className="mt-6 space-y-4 text-[#1C4B26]">
@@ -502,15 +503,15 @@ export function QuickContactStrip() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#D99201]" />
-                <a href="mailto:tusharsalesindia@gmail.com" className="hover:underline">
-                  tusharsalesindia@gmail.com
+                <a href="mailto:apexexamcentre@gmail.com" className="hover:underline">
+                  apexexamcentre@gmail.com
                 </a>
               </div>
             </div>
           </div>
 
           <form
-            action="mailto:tusharsalesindia@gmail.com"
+            action="mailto:apexexamcentre@gmail.com"
             method="POST"
             encType="text/plain"
             className="rounded-2xl border border-[#D99201]/30 bg-white p-6 shadow-lg"
