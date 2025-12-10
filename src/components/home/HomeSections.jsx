@@ -196,7 +196,7 @@ export function AboutSnapshot() {
       <div className="grid gap-10 lg:grid-cols-2 items-center">
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative">
           <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-[#D99201]/18 via-transparent to-[#1A3F22]/15 blur-[60px]" aria-hidden />
-          <div className="relative bg-white/95 rounded-[32px] p-10 shadow-xl border border-[#EFE9DB]">
+          <div className="relative bg-white/95 rounded-[32px] p-6 shadow-xl border border-[#EFE9DB]">
             <motion.p
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -222,24 +222,10 @@ export function AboutSnapshot() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
               className="mt-6 text-lg text-[#1C4B26] leading-relaxed text-justify about-quote"
             >
-              APEX Training and Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within Guru Harkrishan Public School, Vasant Vihar. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment providers.
+             Apex Training & Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within Guru Harkrishan Public School, Vasant Vihar. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
             </motion.p>
 
-            <div className="mt-8 grid gap-6 sm:grid-cols-3">
-              {signatureStats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: 0.45, ease: 'easeOut', delay: 0.15 + index * 0.08 }}
-                  className="rounded-2xl border border-[#F2C94C]/40 bg-[#FFFBF4] px-4 py-5 text-center"
-                >
-                  <p className="text-2xl font-semibold text-[#905A01]">{stat.value}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#58761B]">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
+           
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -368,6 +354,7 @@ export function CentrePreview() {
         </motion.div>
 
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.15 }} className="rounded-3xl bg-white p-8 shadow-xl border border-[#E3E3E3]">
+          <h3 className="text-2xl font-semibold text-[#1A3F22] mb-6">Salient Features</h3>
           <ul className="space-y-4 text-[#1C4B26]">
             {centreHighlights.map((highlight) => (
               <li key={highlight} className="flex items-start gap-3">

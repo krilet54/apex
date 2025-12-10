@@ -68,7 +68,7 @@ export default function Home(){
       </motion.div>
       <motion.section {...sectionMotion} transition={sectionTransition} className="bg-[#FFFAF2] py-16">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">Service families</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">Service Portfolio</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Built to support every examination format.</h2>
           <p className="mt-2 text-[#4C6B37]">Infrastructure, manpower, security and support services operated from a single command desk.</p>
           <div className="mt-10">

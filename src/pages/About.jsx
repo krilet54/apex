@@ -48,24 +48,39 @@ export default function About() {
               show: { transition: { staggerChildren: 0.12 } }
             }}
           >
-            <div>
-              <motion.h1
-                className="mt-4 text-4xl lg:text-[44px] font-semibold leading-tight"
-                variants={dirVariants('left', 16)}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-              >
-                Trusted Infrastructure Partners for High-Stakes Examination Programmes
-              </motion.h1>
+                          <div>
+                {/* Added top heading */}
+                <motion.h2
+                  className="text-2xl font-semibold uppercase tracking-[0.25em] text-[#6DE5A9]"
+                  variants={dirVariants('left', 16)}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
+                  About Us
+                </motion.h2>
 
-              <motion.div className="mt-8 flex flex-wrap gap-4" variants={dirVariants('down', 12)} transition={{ duration: 0.55 }}>
-                <Link to="/contact" className="btn-base btn-primary">
-                  Engage Apex
-                </Link>
-                <Link to="/our-centre" className="btn-base btn-outline-light">
-                  Tour the Centre
-                </Link>
-              </motion.div>
-            </div>
+                {/* Reduced main heading size */}
+                <motion.h1
+                  className="mt-3 text-xl lg:text-[34px] font-semibold leading-tight"
+                  variants={dirVariants('left', 16)}
+                  transition={{ duration: 0.7, ease: 'easeOut' }}
+                >
+                  Trusted Infrastructure Partners for High-Stakes Examination Programmes
+                </motion.h1>
+
+                <motion.div
+                  className="mt-8 flex flex-wrap gap-4"
+                  variants={dirVariants('down', 12)}
+                  transition={{ duration: 0.55 }}
+                >
+                  <Link to="/contact" className="btn-base btn-primary">
+                    Engage Apex
+                  </Link>
+                  <Link to="/our-centre" className="btn-base btn-outline-light">
+                    Tour the Centre
+                  </Link>
+                </motion.div>
+              </div>
+
 
             <motion.div className="relative space-y-5" variants={{ hidden: { opacity: 0, scale: 0.98 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.7 }}>
               <div className="absolute -inset-4 rounded-[32px] bg-white/10 blur-2xl" aria-hidden />
@@ -97,11 +112,11 @@ export default function About() {
             </div>
             <div className="grid gap-6 text-[#1C4B26]">
               <motion.div className="border-l-2 border-[#D99201] pl-5" variants={dirVariants('right', 8)} transition={{ duration: 0.55 }}>
-                <p className="uppercase tracking-[0.3em] text-sm font-semibold text-[#9F6B1F]">Mission</p>
+                <p className="uppercase tracking-[0.3em] text-lg font-semibold text-[#9F6B1F]">Mission</p>
                 <p className="mt-3 text-lg font-semibold">Secure, high-quality examination and training delivery.</p>
               </motion.div>
               <motion.div className="border-l-2 border-[#1A3F22] pl-5" variants={dirVariants('right', 8)} transition={{ duration: 0.6, delay: 0.06 }}>
-                <p className="uppercase tracking-[0.3em] text-sm font-semibold text-[#1A3F22]">Ethos</p>
+                <p className="uppercase tracking-[0.3em] text-lg font-semibold text-[#1A3F22]">Ethos</p>
                 <p className="mt-3 text-lg font-semibold">Operate with discipline, transparency, and responsible governance.</p>
               </motion.div>
             </div>
@@ -120,7 +135,7 @@ export default function About() {
             </motion.p>
           </div>
           <motion.div className="rounded-[30px] bg-[#F8F4EA] p-8 border border-[#E5DCCB]" initial={{ opacity: 0, x: 8 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#9F6B1F]">Focus areas</p>
+            <p className="text-lg font-semibold uppercase tracking-[0.35em] text-[#9F6B1F]">Focus areas</p>
             <motion.ul className="mt-4 space-y-3 text-sm text-[#1C4B26]" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
               {focusAreas.map((item, idx) => (
                 <motion.li key={item} variants={{ hidden: { opacity: 0, x: 6 }, show: { opacity: 1, x: 0 } }} transition={{ duration: 0.45, delay: idx * 0.03 }}>{item}</motion.li>

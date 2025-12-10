@@ -77,29 +77,58 @@ export default function OurCentre() {
       <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-gradient-to-br from-[#0B1F13] via-[#122A18] to-[#1D3C24] text-white py-12 lg:py-16 border-y border-white/10">
         <div className="container mx-auto px-6 lg:px-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <div>
-            <motion.h1 className="mt-4 text-4xl lg:text-[44px] font-semibold leading-tight" variants={dirVariants('left', 16)} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.95, ease: 'easeOut' }}>
-              A purpose-built examination floor designed for control and consistency.
-            </motion.h1>
-            <motion.p className="mt-4 text-white/80 leading-relaxed" variants={dirVariants('down', 14)} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.95, ease: 'easeOut' }}>
-              Located within Guru Harkrishan Public School, Vasant Vihar, the facility integrates candidate management, technology, and security through a centrally managed operational framework.
-            </motion.p>
-            <motion.div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 text-sm text-white/80" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-              {centreStats.map((stat, i) => (
-                <motion.div key={stat.label} className="border-l border-white/30 pl-4" variants={dirVariants('left', 10)} transition={{ duration: 0.85, delay: i * 0.06, ease: 'easeOut' }}>
-                  <p className="text-2xl font-semibold text-white"><MotionCounter valueString={stat.value} /></p>
-                  <p className="mt-1 leading-snug">{stat.label}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-            <motion.div className="mt-8 flex flex-wrap gap-4" variants={dirVariants('down', 12)} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.85, ease: 'easeOut' }}>
-              <Link to="/contact" className="btn-base btn-primary">
-                Book The Centre
-              </Link>
-              <Link to="/about" className="btn-base btn-outline-light">
-                Learn About Apex
-              </Link>
-            </motion.div>
-          </div>
+  {/* Added top heading */}
+  <motion.h2
+    className="text-2xl font-semibold uppercase tracking-[0.25em] text-[#6DE5A9]"
+    variants={dirVariants('left', 16)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+  >
+    Our Centre
+  </motion.h2>
+
+  {/* Reduced heading size */}
+  <motion.h1
+    className="mt-3 text-xl lg:text-[34px] font-semibold leading-tight"
+    variants={dirVariants('left', 16)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    transition={{ duration: 0.95, ease: 'easeOut' }}
+  >
+    A purpose-built examination floor designed for control and consistency.
+  </motion.h1>
+
+  <motion.p
+    className="mt-4 text-white/80 leading-relaxed"
+    variants={dirVariants('down', 14)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    transition={{ duration: 0.95, ease: 'easeOut' }}
+  >
+    Located within Guru Harkrishan Public School, Vasant Vihar, the facility integrates candidate management, technology, and security through a centrally managed operational framework.
+  </motion.p>
+
+  <motion.div
+    className="mt-8 flex flex-wrap gap-4"
+    variants={dirVariants('down', 12)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    transition={{ duration: 0.85, ease: 'easeOut' }}
+  >
+    <Link to="/contact" className="btn-base btn-primary">
+      Book The Centre
+    </Link>
+    <Link to="/about" className="btn-base btn-outline-light">
+      Learn About Apex
+    </Link>
+  </motion.div>
+</div>
+
           <div className="relative">
             <div className="absolute -inset-4 rounded-[32px] bg-white/10 blur-2xl" aria-hidden />
             <motion.img
