@@ -15,9 +15,9 @@ const contactCards = [
   },
   {
     label: 'Email desk',
-    value: 'tusharsalesindia@gmail.com',
+    value: 'apexexamcentre@gmail.com',
     subcopy: 'We respond within 1 business day',
-    href: 'mailto:tusharsalesindia@gmail.com',
+    href: 'mailto:apexexamcentre@gmail.com',
     icon: Mail
   },
   {

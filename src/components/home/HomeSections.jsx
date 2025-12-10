@@ -502,15 +502,15 @@ export function QuickContactStrip() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#D99201]" />
-                <a href="mailto:tusharsalesindia@gmail.com" className="hover:underline">
-                  tusharsalesindia@gmail.com
+                <a href="mailto:apexexamcentre@gmail.com" className="hover:underline">
+                  apexexamcentre@gmail.com
                 </a>
               </div>
             </div>
           </div>
 
           <form
-            action="mailto:tusharsalesindia@gmail.com"
+            action="mailto:apexexamcentre@gmail.com"
             method="POST"
             encType="text/plain"
             className="rounded-2xl border border-[#D99201]/30 bg-white p-6 shadow-lg"

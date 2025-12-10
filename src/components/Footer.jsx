@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import logoPrimary from '../assets/images/L2.png'
 import logoSecondary from '../assets/images/L3.png'
 import servicesData from '../data/services'
+import logonew from '../assets/logo-new.png'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -26,7 +27,7 @@ export default function Footer() {
           <p className="text-xs uppercase tracking-[0.4em] text-white/70">Apex Examination Services</p>
           <div className="rounded-3xl bg-white/95 p-6 shadow-2xl shadow-[#8A4E00]/35 border border-white/60">
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-6">
-              <img src={logoPrimary} alt="Apex crest" className="h-11 w-auto object-contain sm:h-12" loading="lazy" />
+              <img src={logonew} alt="Apex crest" className="h-11 w-auto object-contain sm:h-12" loading="lazy" />
               <span className="h-px w-16 bg-[#F6C567]/70 sm:h-14 sm:w-px" aria-hidden />
               <img src={logoSecondary} alt="Apex emblem" className="h-11 w-auto object-contain sm:h-12" loading="lazy" />
             </div>
@@ -77,8 +78,8 @@ export default function Footer() {
             </div>
             <div>
               Email:{' '}
-              <a href="mailto:tusharsalesindia@gmail.com" className="font-semibold text-white hover:underline">
-                tusharsalesindia@gmail.com
+              <a href="mailto:apexexamcentre@gmail.com" className="font-semibold text-white hover:underline">
+                apexexamcentre@gmail.com
               </a>
             </div>
           </address>

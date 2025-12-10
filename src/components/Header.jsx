@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import logo1 from "../assets/images/L2.png";
 import logo2 from "../assets/images/L3.png";
+import newlogo from '../assets/logo-new.png';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -51,15 +52,11 @@ export default function Header() {
             {/* Logo Section */}
             <Link to="/" className="flex items-center gap-0 flex-shrink-0 z-50">
               <img
-                src={logo1}
+                src={newlogo}
                 alt="Logo 1"
-                className="h-12 sm:h-14 w-auto object-contain"
+                className="h-14 sm:h-16 w-auto object-contain"
               />
-              <img
-                src={logo2}
-                alt="Logo 2"
-                className="h-10 sm:h-12 w-auto object-contain -ml-1"
-              />
+              
             </Link>
 
             {/* Desktop Navigation */}

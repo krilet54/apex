@@ -9,71 +9,71 @@ const services = [
   {
     id: 'online-exam-centre',
     title: 'Online Exam Centre',
-    short: 'End-to-end online exam delivery with monitoring and proctoring.',
+    short: 'End-to-end online examination delivery within secure, monitored environments.',
     slug: 'online-exam-centre',
     heroImage: s4,
     featureIcons: ['Monitor', 'Camera', 'ShieldCheck'],
     icon: 'Laptop',
     features: [
-      'Secure browser environments',
-      'Proctoring & monitoring',
-      'Scalable candidate capacity'
+      'Secure examination and browser environments',
+      'Controlled examination rooms',
+      'Stable power and connectivity'
     ],
-    description: `Delivery of remote and onsite online examinations with secure proctoring, identity verification and robust infrastructure to handle peak concurrency.`
+    description: `We deliver secure on-site and remote online examinations supported by controlled proctoring, robust identity verification, and resilient technical infrastructure.`
     ,
-    longDescription: `Delivery of remote and on-site online examinations backed by secure proctoring, reliable identity verification and hardened infrastructure. Our platform supports large concurrent candidate loads, encrypted communications and detailed audit trails to maintain assessment integrity and availability for high-stakes testing.`
+    longDescription: `We deliver secure on-site and remote online examinations supported by controlled proctoring, robust identity verification, and resilient technical infrastructure. Our environments are designed to support concurrent examination sessions at scale, with encrypted systems, continuous monitoring, and audit-ready records to protect assessment integrity and availability.`
   },
   {
     id: 'manpower-outsourcing',
     title: 'Manpower Outsourcing (IT & Operations)',
-    short: 'Trained IT and operations staff for exam delivery and facility management.',
+    short: 'Professionally trained IT and operations personnel supporting secure examination delivery and facility operations.',
     slug: 'manpower-outsourcing',
     heroImage: s3,
     featureIcons: ['Users', 'UserCheck', 'Clipboard'],
     icon: 'Users',
-    features: ['Technical support engineers', 'Invigilation teams', 'Logistics coordinators'],
-    description: `Provision of professional manpower for IT support, invigilation and operations to run exams smoothly and securely.`
+    features: ['On-site IT and operations support', 'Trained invigilation personnel', 'Session logistics and coordination teams'],
+    description: `Professional IT, invigilation, and operations staffing supporting secure examination delivery.`
     ,
-    longDescription: `We supply vetted, trained IT and operations personnel — from technical support engineers to invigilation and logistics teams — to ensure exam programmes run efficiently and securely. Staff are trained on exam protocols, can scale to event size, and reduce administrative overhead while maintaining operational quality.`
+    longDescription: `We provide trained IT and examination operations personnel to support reliable, secure exam delivery. From on-site technical readiness to invigilation and session coordination, our teams operate within defined protocols to ensure consistency, efficiency, and controlled execution across examination programmes.`
   },
   {
     id: 'seminar-training-centres',
     title: 'Seminar & Training Centres',
-    short: 'Purpose-built centres for corporate training and seminars.',
+    short: 'Structured spaces for corporate training, seminars and structured programmes.',
     slug: 'seminar-training-centres',
     heroImage: s5,
     featureIcons: ['BookOpen', 'Mic', 'Calendar'],
     icon: 'BookOpen',
-    features: ['AV-enabled rooms', 'Modular seating', 'Catering support'],
-    description: `Modern seminar and training spaces suitable for corporate programs, workshops and certification training with AV and support services.`
+    features: ['AV-enabled training rooms', 'Flexible seating configurations', 'On-site coordination and catering support'],
+    description: `Professionally equipped training and seminar spaces supporting corporate workshops, certification sessions and training programmes.`
     ,
-    longDescription: `Purpose-built seminar and training venues for corporate programmes, workshops and certifications, equipped with professional AV, modular seating and on-site support. We manage room setup, AV operation and optional catering so your sessions run smoothly and attendees can focus on learning.`
+    longDescription: `Professionally managed seminar and training venues designed to support corporate programmes, workshops, and certification sessions. Our spaces are equipped with AV infrastructure, flexible layouts, and on-site coordination, allowing sessions to run smoothly while participants remain focused on learning outcomes.`
   },
   {
     id: 'exam-security-services',
     title: 'Exam Security Services',
-    short: 'Comprehensive security and compliance for examinations.',
+    short: 'Security protocols aligned with examination compliance',
     slug: 'exam-security-services',
     heroImage: s1,
     featureIcons: ['ShieldCheck', 'Video', 'Key'],
     icon: 'ShieldCheck',
-    features: ['CCTV', 'Access control', 'Secure document handling'],
-    description: `Security services including CCTV monitoring, access control and secure handling of examination materials to maintain integrity.`
+    features: ['On-site security personnel and supervision', 'Controlled access and monitored environments', 'Secure handling of examination materials'],
+    description: `Dedicated security staff managing access control, on-site surveillance, and the secure handling of examination materials.`
     ,
-    longDescription: `End-to-end exam security services including CCTV monitoring, access control systems, secure document handling and chain-of-custody procedures. Our measures minimise the risk of tampering and unauthorised access and provide audit-ready logs for compliance and investigations.`
+    longDescription: `End-to-end examination security delivered through trained security personnel, controlled access procedures, and monitored environments. Our approach combines disciplined on-site supervision, secure handling of examination materials, and documented controls to protect integrity, prevent unauthorised access, and support audit and compliance requirements.`
   },
   {
     id: 'housekeeping-services',
     title: 'Housekeeping Services',
-    short: 'Daily cleaning, sanitisation and facility upkeep.',
+    short: 'Daily cleaning ensuring safe examination environments',
     slug: 'housekeeping-services',
     heroImage: s2,
     featureIcons: ['Home', 'Droplet', 'Trash2'],
     icon: 'Home',
-    features: ['Regular cleaning schedules', 'Sanitisation', 'Waste management'],
-    description: `Professional housekeeping and facility management to ensure a clean, safe and compliant environment for candidates and staff.`
+    features: ['Scheduled cleaning aligned to examination sessions', 'Sanitization of examination and common areas', 'Controlled waste handling and disposal practices'],
+    description: `Dedicated housekeeping staff maintaining clean, safe, and compliant examination environments.`
     ,
-    longDescription: `Professional housekeeping and facility management to keep venues clean, sanitised and compliant. Our teams follow scheduled cleaning, sanitisation protocols and waste-management practices tailored to exam days, ensuring a safe, comfortable environment for candidates and staff.`
+    longDescription: `Professionally managed housekeeping and facility support ensuring clean, hygienic, and compliant examination environments. Our teams operate to exam-day schedules, applying structured cleaning, sanitization, and waste-handling protocols to maintain comfort, safety, and operational readiness for candidates and staff.`
   }
 ]
 

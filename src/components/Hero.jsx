@@ -74,7 +74,7 @@ export default function Hero() {
               World Class Examination & Training Facilities
             </motion.h1>
             <p className="mt-4 text-white/90 max-w-xl">
-              To deliver secure, high-quality examination and training solutions with integrity and precision.
+              To deliver secure, high-quality training and examination solutions with integrity and precision.
             </p>
 
             {/* Buttons */}

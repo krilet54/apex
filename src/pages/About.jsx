@@ -163,7 +163,7 @@ export default function About() {
             <div className="grid gap-6 text-sm text-[#1C4B26]">
               <motion.div className="border-l-2 border-[#D99201] pl-5" variants={dirVariants('right', 8)} transition={{ duration: 0.55 }}>
                 <p className="uppercase tracking-[0.3em] text-xs text-[#9F6B1F]">Mission</p>
-                <p className="mt-2">Secure, high-quality examination and training delivery.</p>
+                <p className="mt-2">Secure, high-quality training and examination delivery.</p>
               </motion.div>
               <motion.div className="border-l-2 border-[#1A3F22] pl-5" variants={dirVariants('right', 8)} transition={{ duration: 0.6, delay: 0.06 }}>
                 <p className="uppercase tracking-[0.3em] text-xs text-[#1A3F22]">Ethos</p>
@@ -176,9 +176,9 @@ export default function About() {
         <motion.section className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start" initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
           <div>
             <motion.p className="text-xs uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Who we are</motion.p>
-            <motion.h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>Professionally managed examination and training services.</motion.h2>
+            <motion.h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>Professionally managed training and examination services.</motion.h2>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
-              APEX Examination & Training Centre is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
+              APEX Examination & Training Centre is a professionally managed training and examination services provider supporting secure, large-scale assessment delivery.
             </motion.p>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed" variants={dirVariants('down', 10)} transition={{ duration: 0.95, delay: 0.04 }}>
               Operating from a purpose-designed facility in Vasant Vihar, New Delhi, APEX combines technology-enabled infrastructure, trained operational teams, and structured processes to meet the requirements of national and international examination bodies, academic institutions, and corporate assessment partners.

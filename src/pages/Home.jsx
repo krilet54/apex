@@ -47,7 +47,7 @@ export default function Home(){
               Trusted by international boards and government agencies.
             </p>
             <p className="mt-2 text-white/80 max-w-2xl">
-              To deliver secure, high-quality examination and training solutions with integrity and precision.
+              To deliver secure, high-quality training and examination solutions with integrity and precision.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
