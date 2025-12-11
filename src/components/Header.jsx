@@ -48,13 +48,13 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-28">
             {/* Logo Section */}
             <Link to="/" className="flex items-center gap-0 flex-shrink-0 z-50">
               <img
                 src={newlogo}
                 alt="Logo 1"
-                className="h-14 sm:h-16 w-auto object-contain"
+                className="h-14 sm:h-24 w-auto object-contain"
               />
               
             </Link>
@@ -103,7 +103,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <div className="h-20"></div>
+      <div className="h-28"></div>
 
       {/* Mobile Menu Overlay */}
       {open && (

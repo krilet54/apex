@@ -53,10 +53,12 @@ const galleryItems = [
 
 const centreHighlights = [
   'High-speed internet + backup line',
-  'Fully air-conditioned labs',
+  'Fully air-conditioned labs, waiting areas, and operational spaces',
   'Advanced CCTV surveillance',
   'Secure entry protocols',
-  'Dedicated waiting room for 181+ candidates'
+  'Dedicated waiting room for 181+ candidates with baggage storage',
+  'Dedicated staff room for invigilators and exam personnel',
+  'Secure storage room for examination materials and specialised equipment',
 ]
 
 const signatureStats = [
