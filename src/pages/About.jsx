@@ -66,6 +66,13 @@ export default function About() {
                 >
                   Trusted Infrastructure Partners for High-Stakes Examination Programmes
                 </motion.h1>
+                <motion.p
+                  className="mt-4 max-w-2xl text-base text-white/80 leading-relaxed"
+                  variants={dirVariants('left', 16)}
+                  transition={{ duration: 0.75, ease: 'easeOut' }}
+                >
+                  From secured exam floors to coordinated candidate flow and on-site operational teams, Apex provides fully managed environments for reliable assessment delivery.
+                </motion.p>
 
                 <motion.div
                   className="mt-8 flex flex-wrap gap-4"
@@ -125,8 +132,7 @@ export default function About() {
 
         <motion.section className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start" initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
           <div>
-            <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Who we are</motion.p>
-            <motion.h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 10)} transition={{ duration: 0.6 }}>Professionally managed examination and training services.</motion.h2>
+            <motion.h2 className="text-2xl lg:text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 6)} transition={{ duration: 0.55 }}>Who we are</motion.h2>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
               APEX Training and Examination Centre is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
             </motion.p>

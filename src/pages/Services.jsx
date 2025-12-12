@@ -39,22 +39,46 @@ export default function Services() {
   return (
     <>
       <motion.section
-        className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen text-white py-12 lg:py-16 border-y border-white/10 bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(135deg, rgba(11,31,19,0.94), rgba(27,59,36,0.9), rgba(31,74,44,0.9)), url(${heroImg2})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
+        className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen text-white py-12 lg:py-16 border-y border-white/10 bg-gradient-to-br from-[#08160D] via-[#12311E] to-[#1E422A]"
         {...sectionMotion}
         transition={sectionTransition}
       >
         <div className="container mx-auto px-6 lg:px-12">
-          <h1 className="text-[40px] lg:text-[56px] font-semibold leading-tight">
-            Services
-          </h1>
-          <p className="mt-4 text-white/80 max-w-2xl">
-            Integrated examination infrastructure, operational manpower, and support services delivered through a centrally managed framework.
-          </p>
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] items-center">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6 }}>
+              <motion.h2
+                className="text-2xl font-semibold uppercase tracking-[0.25em] text-[#6DE5A9]"
+              >
+                Services
+              </motion.h2>
+              <motion.h1
+                className="mt-3 text-xl lg:text-[34px] font-semibold leading-tight"
+              >
+                Integrated Solutions for Secure Examination Delivery
+              </motion.h1>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link to="/contact" className="btn-base btn-primary">
+                  Contact Our Team
+                </Link>
+                <Link to="/our-centre" className="btn-base btn-outline-light">
+                  Tour the Centre
+                </Link>
+              </div>
+            </motion.div>
+            <motion.div className="relative" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65, delay: 0.05 }}>
+              <div className="absolute -inset-4 rounded-[32px] bg-white/10 blur-2xl" aria-hidden />
+              <motion.img
+                src={heroImg2}
+                alt="Operations team preparing an exam hall"
+                className="relative rounded-[28px] border border-white/20 shadow-2xl w-full object-cover h-64 lg:h-80"
+                loading="lazy"
+                initial={{ opacity: 0, x: 40, scale: 0.96 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.75, ease: 'easeOut' }}
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 

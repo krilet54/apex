@@ -62,9 +62,8 @@ export default function ServiceDetail(){
 
   // provide default details if none present so the Details section isn't empty
   const details = (service.details && service.details.length) ? service.details : [
-    { q: 'How is this service delivered?', a: `Our ${service.title} offering can be delivered on-site or remotely depending on your needs. We tailor deployment, staffing and technology to fit your schedule and scale.` },
-    { q: 'What is the typical timeline?', a: 'Smaller engagements can be scheduled within 1–2 weeks; larger programmes are planned with milestones and a timeline agreed during scoping.' },
-    { q: 'How do I request a quote?', a: 'Use the Contact button to request an estimate — we respond within one business day with next steps.' }
+    { q: 'What readiness work happens before programme launch?', a: 'We run infrastructure and access-control checks, rehearse flows with the deployed team, and capture evidence packs so your awarding body can sign off ahead of the first candidate sitting.' },
+    { q: 'How do we kick off a scoped proposal?', a: 'Share your delivery window, cohorts, and compliance requirements via the contact form. We respond within one business day with a structured plan and commercial outline.' }
   ]
 
   return (

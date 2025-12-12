@@ -9,7 +9,7 @@ const contactCards = [
   {
     label: 'Call',
     value: '+91 95605 53909',
-    subcopy: 'Programme office',
+    subcopy: 'Contact Our Team',
     href: 'tel:+919560553909',
     icon: Phone
   },
