@@ -18,11 +18,9 @@ import timelapseReel from '../../assets/images/Stop_Motion_Exam_Centre_Timelapse
 import labImage from '../../assets/images/examination lab.png'
 import waitingRoomImage from '../../assets/images/exam waiting room.png'
 import desksImage from '../../assets/images/desks exam.png'
-import accaLogo from '../../assets/acca.png'
-import bitsLogo from '../../assets/bits.png'
-import cfaLogo from '../../assets/cfa.png'
-import britishCouncilLogo from '../../assets/british council.png'
-import mrcpLogo from '../../assets/mrcp.svg'
+import cherishLogo from '../../assets/cherish logo.jpg'
+import greensoLogo from '../../assets/greenso logo.png'
+import tsiLogo from '../../assets/tsi logo.jpeg'
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -31,11 +29,9 @@ const fadeUp = {
 }
 
 const trustLogos = [
-  { name: 'British Council', image: britishCouncilLogo, className: 'h-20' },
-  { name: 'ACCA', image: accaLogo },
-  { name: 'CFA Institute', image: cfaLogo },
-  { name: 'MRCP(UK)', image: mrcpLogo, className: 'h-12' },
-  { name: 'BITS Pilani – WILP', image: bitsLogo }
+  { name: 'Cherish Eduskills', image: cherishLogo },
+  { name: 'Greenso Energy', image: greensoLogo },
+  { name: 'TSI', image: tsiLogo }
 ]
 
 const infrastructureStats = [
