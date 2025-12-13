@@ -20,7 +20,7 @@ export default function ServiceDetail(){
   const service = services.find(s=> s.slug === slug)
 
   useEffect(()=>{
-    document.title = service? `Apex — ${service.title}`: 'Apex — Service'
+    document.title = service ? `APEX — ${service.title}` : 'APEX — Service'
   }, [service])
 
   if(!service) return (
@@ -60,10 +60,16 @@ export default function ServiceDetail(){
   // mapping for feature icons (uses `service.featureIcons` entries)
   const FEATURE_ICONS = { Monitor, Camera, ShieldCheck, Users, UserCheck, Clipboard, BookOpen, Mic, Calendar, Video, Key, Home, Droplet, Trash2 }
 
-  // provide default details if none present so the Details section isn't empty
-  const details = (service.details && service.details.length) ? service.details : [
-    { q: 'What readiness work happens before programme launch?', a: 'We run infrastructure and access-control checks, rehearse flows with the deployed team, and capture evidence packs so your awarding body can sign off ahead of the first candidate sitting.' },
-    { q: 'How do we kick off a scoped proposal?', a: 'Share your delivery window, cohorts, and compliance requirements via the contact form. We respond within one business day with a structured plan and commercial outline.' }
+  // unified FAQ details for all services
+  const details = [
+    {
+      q: 'What is the typical timeline?',
+      a: 'Smaller engagements can be scheduled within 3–5 days. Larger programmes are planned with defined milestones and an agreed timeline following the scoping discussion.'
+    },
+    {
+      q: 'How do I request a quote?',
+      a: 'Use the Contact button to request an estimate. Our team responds within one business day with the required details and next steps.'
+    }
   ]
 
   return (

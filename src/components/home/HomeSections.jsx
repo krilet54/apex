@@ -195,7 +195,7 @@ export function TrustStrip() {
 export function AboutSnapshot() {
   return (
     <section className="container mx-auto px-6 py-20">
-      <div className="grid gap-10 lg:grid-cols-2 items-center">
+      <div className="grid gap-10 lg:grid-cols-2 items-start">
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative">
           <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-[#D99201]/18 via-transparent to-[#1A3F22]/15 blur-[60px]" aria-hidden />
           <div className="relative bg-white/95 rounded-[32px] p-6 shadow-xl border border-[#EFE9DB]">
@@ -215,7 +215,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.55, ease: 'easeOut', delay: 0.18 }}
               className="mt-4 text-[40px] leading-[1.15] font-semibold text-[#1A3F22]"
             >
-              Apex Training and Examination Centre
+              APEX Training and Examination Centre
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -224,7 +224,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
               className="mt-6 text-lg text-[#1C4B26] leading-relaxed text-justify about-quote"
             >
-             Apex Training & Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within Guru Harkrishan Public School, Vasant Vihar. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
+             APEX Training & Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within <span className="font-semibold">Guru Harkrishan Public School, Vasant Vihar</span>. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
             </motion.p>
 
            
@@ -237,7 +237,7 @@ export function AboutSnapshot() {
               className="mt-8 flex flex-wrap gap-4"
             >
               <Link to="/about" className="btn-base btn-primary">
-                Learn More About Apex
+                Learn More About APEX
               </Link>
               <Link to="/contact" className="btn-base btn-outline">
                 Speak With Our Team
@@ -273,10 +273,13 @@ export function AboutSnapshot() {
             </div>
           </div>
           <div className="rounded-2xl border border-[#D99201]/25 bg-white/95 p-6 shadow-lg">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">Infrastructure Reel</p>
-            <h3 className="mt-3 text-2xl font-semibold text-[#1A3F22]">Data Centre & Labs</h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">MISSION-READY SUPPORT</p>
+            <h3 className="mt-3 text-2xl font-semibold text-[#1A3F22]">The Benchmark in Examination Services.</h3>
             <p className="mt-2 text-sm text-[#1C4B26] leading-relaxed">
-              Live capture from our secure examination floors showcasing monitoring, biometric access and dedicated control rooms.
+              Trusted by international boards and government agencies.
+            </p>
+            <p className="mt-1 text-sm text-[#1C4B26] leading-relaxed">
+              To deliver secure, high-quality examination and training solutions with integrity and precision.
             </p>
           </div>
         </motion.div>
@@ -384,7 +387,7 @@ export function WhyChooseApex() {
     <section className="bg-gradient-to-b from-[#FDF9F2] to-white py-20">
       <div className="container mx-auto px-6">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#58761B]">Why Choose Apex</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#58761B]">Why Choose APEX</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Operationally ready for secure examination delivery</h2>
           <p className="mt-2 text-[#58761B]">Five reasons partners trust us for high-stakes delivery.</p>
         </div>
@@ -441,7 +444,7 @@ export function LocationPreview() {
 
         <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="w-full overflow-hidden rounded-3xl shadow-2xl border border-[#1A3F22]/10">
           <iframe
-            title="Apex Centre Location"
+            title="APEX Centre Location"
             src="https://maps.google.com/maps?q=Guru%20Harkrishan%20Public%20School%2C%20Vasant%20Vihar%2C%20New%20Delhi%20%E2%80%93%20110057&t=&z=15&ie=UTF8&iwloc=B&output=embed"
             className="h-[360px] w-full"
             loading="lazy"
@@ -456,7 +459,7 @@ export function LocationPreview() {
 export function PrimaryCTA() {
   const primaryHeadline = useTypedText('Purpose-built examination infrastructure for reliability, precision, and scale.', { speed: 60, delay: 240 })
   return (
-    <section className="relative bg-white pb-32 pt-24 text-[#0F2A16] lg:pb-40 lg:pt-32">
+    <section className="relative bg-white py-12 text-[#0F2A16] lg:py-16">
       <div className="container mx-auto px-6 text-center">
         <h2 className="mt-4 text-3xl font-semibold text-[#0F2A16] lg:text-4xl">{primaryHeadline}</h2>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -550,6 +553,77 @@ export function QuickContactStrip() {
             </div>
           </form>
         </div>
+      </div>
+    </section>
+  )
+}
+
+export function ClientsSection() {
+  return (
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-6">
+        {/* Our Clients Say */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h2 className="text-3xl font-semibold text-[#1A3F22]">
+            Our Clients Say
+          </h2>
+        </motion.div>
+
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-8 flex justify-center"
+        >
+          <div className="w-full max-w-5xl rounded-[24px] bg-white px-8 py-10 shadow-[0_24px_60px_rgba(0,0,0,0.06)] border border-[#E5DCCB] text-center">
+            <p className="text-base leading-relaxed text-[#1C4B26] max-w-3xl mx-auto">
+              APEX Training &amp; Examination Centre has consistently demonstrated a high level of professionalism in
+              examination delivery. Their infrastructure, operational discipline, and on-ground coordination gave us
+              complete confidence in conducting our assessment programmes smoothly and securely.
+            </p>
+            <div className="mt-6">
+              <p className="text-sm font-semibold text-[#C14A32]">Programme Manager</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#8A6A2E] mt-1">Academic &amp; Assessment Partner</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Our Trusted Clients */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-14 text-center"
+        >
+          <h2 className="text-3xl font-semibold text-[#1A3F22]">
+            Our Trusted Clients
+          </h2>
+        </motion.div>
+
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="mt-8 overflow-hidden"
+        >
+          <div className="trust-marquee flex items-center gap-10 px-4">
+            {[...trustLogos, ...trustLogos].map((logo, index) => (
+              <div
+                key={`${logo.name}-${index}`}
+                className="min-w-[160px] flex items-center justify-center rounded-2xl bg-white px-6 py-4 shadow-md border border-[#E5DCCB]"
+              >
+                <img
+                  src={logo.image}
+                  alt={`${logo.name} logo`}
+                  className={`${logo.className ?? 'h-14'} w-auto object-contain`}
+                  draggable={false}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

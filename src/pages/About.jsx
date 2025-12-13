@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
+import { InfrastructureStats, ClientsSection } from '../components/home/HomeSections'
 import about_img from '../assets/about_apex.png'
 
 // helper to create directional variants
@@ -29,7 +30,7 @@ const deliveryTenets = [
 
 export default function About() {
   useEffect(() => {
-    document.title = 'Apex — About'
+    document.title = 'APEX — About'
   }, [])
 
   return (
@@ -71,7 +72,7 @@ export default function About() {
                   variants={dirVariants('left', 16)}
                   transition={{ duration: 0.75, ease: 'easeOut' }}
                 >
-                  From secured exam floors to coordinated candidate flow and on-site operational teams, Apex provides fully managed environments for reliable assessment delivery.
+                  From secured exam floors to coordinated candidate flow and on-site operational teams, APEX provides fully managed environments for reliable assessment delivery.
                 </motion.p>
 
                 <motion.div
@@ -80,7 +81,7 @@ export default function About() {
                   transition={{ duration: 0.55 }}
                 >
                   <Link to="/contact" className="btn-base btn-primary">
-                    Engage Apex
+                    Engage APEX
                   </Link>
                   <Link to="/our-centre" className="btn-base btn-outline-light">
                     Tour the Centre
@@ -149,6 +150,57 @@ export default function About() {
             </motion.ul>
           </motion.div>
         </motion.section>
+      </PageContainer>
+
+      <InfrastructureStats />
+
+      <PageContainer>
+        <motion.section
+          className="mt-16 rounded-[32px] border border-[#E8E0CF] bg-white px-6 py-10 lg:px-12 lg:py-12 text-center"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+        >
+          <motion.p
+            className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]"
+            variants={dirVariants('left', 6)}
+            transition={{ duration: 0.45 }}
+          >
+            Operational Foundations
+          </motion.p>
+          <motion.h2
+            className="mt-3 text-3xl lg:text-[34px] font-semibold text-[#1A3F22]"
+            variants={dirVariants('left', 10)}
+            transition={{ duration: 0.6 }}
+          >
+            How we keep every examination day stable
+          </motion.h2>
+          <motion.div
+            className="mt-8 grid gap-6 md:grid-cols-4 text-[#1C4B26]"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+          >
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Purpose-Built Facilities</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Designed for secure, large-scale examination delivery</p>
+            </motion.div>
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Trained Operational Teams</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Invigilation, IT, and on-site support staff</p>
+            </motion.div>
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Redundant Systems</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Power, network, and operational continuity ensured</p>
+            </motion.div>
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Compliance-Ready Setup</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Aligned with global testing and security standards</p>
+            </motion.div>
+          </motion.div>
+        </motion.section>
 
         <motion.section
           className="relative mt-16 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden text-white"
@@ -205,6 +257,7 @@ export default function About() {
           </motion.div>
         </motion.section>
       </PageContainer>
+      <ClientsSection />
     </>
   )
 }

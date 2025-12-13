@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Twitter, Youtube, Linkedin } from 'lucide-react'
-import logoSecondary from '../assets/images/L3.png'
 import servicesData from '../data/services'
 import logonew from '../assets/logo-new.png'
 
@@ -27,67 +26,43 @@ export default function Footer() {
       <div className="relative container mx-auto px-6 py-8 lg:py-10 grid gap-8 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         {/* Logo + Social icons */}
         <div className="space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/70">
-            Apex Examination Services
-          </p>
-
-          <div className="rounded-3xl bg-white/95 p-4 shadow-2xl shadow-[#0C3E26]/35 border border-white/60">
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-6">
-              <img
-                src={logonew}
-                alt="Apex crest"
-                className="h-11 w-auto object-contain sm:h-12"
-                loading="lazy"
-              />
-              <span
-                className="h-px w-16 bg-[#6DE5A9]/70 sm:h-14 sm:w-px"
-                aria-hidden
-              />
-              <img
-                src={logoSecondary}
-                alt="Apex emblem"
-                className="h-11 w-auto object-contain sm:h-12"
-                loading="lazy"
-              />
-            </div>
+          <div className="mx-auto flex h-32 w-32 sm:h-40 sm:w-40 items-center justify-center rounded-3xl bg-white/95 shadow-2xl shadow-[#0C3E26]/35 border border-white/60">
+            <img
+              src={logonew}
+              alt="APEX crest"
+              className="h-20 w-auto object-contain sm:h-24"
+              loading="lazy"
+            />
           </div>
 
           {/* Social Media Icons */}
           <div className="flex items-center justify-center gap-4 mt-4">
             <a
-              href="#"
+              href="https://x.com/ApexExamCentre?t=TN59Wg11kTVXCZGH_-tSZA&s=08"
+              target="_blank"
+              rel="noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="Facebook"
+              aria-label="Twitter / X"
             >
-              <Facebook className="w-5 h-5" />
+              <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/apexexamcentre?igsh=MXhjMmI5emI0OGU1eg=="
+              target="_blank"
+              rel="noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
               aria-label="Instagram"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
-              className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
+              href="https://www.youtube.com/@ApexExamCentre"
+              target="_blank"
+              rel="noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
               aria-label="YouTube"
             >
               <Youtube className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -129,10 +104,18 @@ export default function Footer() {
               Vasant Vihar, New Delhi – 110057
             </div>
             <div>
-              Phone:{' '}
-              <a href="tel:+919560553909" className="font-semibold text-white hover:underline">
-                +91 95605 53909
-              </a>
+              Phone:
+              <div className="mt-1 space-y-1">
+                <a href="tel:+919560553909" className="block font-semibold text-white hover:underline">
+                  +91 9560553909
+                </a>
+                <a href="tel:+919560509196" className="block font-semibold text-white hover:underline">
+                  +91 9560509196
+                </a>
+                <a href="tel:01135891079" className="block font-semibold text-white hover:underline">
+                  011 3589 1079
+                </a>
+              </div>
             </div>
             <div>
               Email:{' '}
@@ -146,7 +129,7 @@ export default function Footer() {
 
       {/* Footer bottom */}
       <div className="relative border-t border-white/15 py-3 text-center text-xs text-white/75 space-x-1">
-        <span>© {new Date().getFullYear()} Apex Examination Services. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} APEX. All rights reserved.</span>
         <span>
           Made by{' '}
           <a

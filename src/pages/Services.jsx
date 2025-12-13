@@ -4,10 +4,11 @@ import ServiceList from '../components/ServiceList'
 import PageContainer from '../components/PageContainer'
 import { Link } from 'react-router-dom'
 import heroImg2 from '../assets/heroimg2.png'
+import { InfrastructureStats, ClientsSection } from '../components/home/HomeSections'
 
 const faqs = [
   {
-    question: 'Can Apex customise services for specific awarding bodies?',
+    question: 'Can APEX customise services for specific awarding bodies?',
     answer: 'Yes. We align our processes with awarding-body standards, tailoring manpower, access controls, and reporting to meet specific audit and compliance requirements.'
   },
   {
@@ -25,7 +26,7 @@ const faqs = [
 ]
 export default function Services() {
   useEffect(() => {
-    document.title = 'Apex — Services'
+    document.title = 'APEX — Services'
   }, [])
 
   const sectionMotion = {
@@ -56,6 +57,11 @@ export default function Services() {
               >
                 Integrated Solutions for Secure Examination Delivery
               </motion.h1>
+              <motion.p
+                className="mt-4 text-sm lg:text-base text-white/80 max-w-xl"
+              >
+                Integrated examination infrastructure, operational manpower, and support services delivered through a centrally managed framework.
+              </motion.p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link to="/contact" className="btn-base btn-primary">
                   Contact Our Team
@@ -89,7 +95,7 @@ export default function Services() {
             {...sectionMotion}
             transition={sectionTransition}
           >
-            <div className="container mx-auto px-6 lg:px-12">
+            <div className="container mx-auto px-6 lg:px-12 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">Service Portfolio</p>
               <h2 className="mt-3 text-3xl font-semibold text-[#1A3F22]">Choose the service combination that fits your requirements.</h2>
               <p className="mt-3 text-[#4C6B37]">Integrate infrastructure, operational manpower, and support services to enable smooth, reliable examination delivery.</p>
@@ -99,7 +105,11 @@ export default function Services() {
             </div>
           </motion.div>
         </section>
+      </PageContainer>
 
+      <InfrastructureStats />
+
+      <PageContainer>
         <motion.section
           className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center"
           {...sectionMotion}
@@ -145,6 +155,7 @@ export default function Services() {
           </motion.div>
         </motion.section>
       </PageContainer>
+      <ClientsSection />
     </>
   )
 }

@@ -8,9 +8,13 @@ import LocationMap from '../components/LocationMap'
 const contactCards = [
   {
     label: 'Call',
-    value: '+91 95605 53909',
     subcopy: 'Contact Our Team',
-    href: 'tel:+919560553909',
+    numbers: [
+      { display: '+91 9560553909', href: 'tel:+919560553909' },
+      { display: '+91 9560509196', href: 'tel:+919560509196' },
+      { display: '011 3589 1079', href: 'tel:01135891079' }
+    ],
+    href: null,
     icon: Phone
   },
   {
@@ -22,8 +26,8 @@ const contactCards = [
   },
   {
     label: 'Timings',
-    value: 'Mon – Sat · 9 AM – 7 PM',
-    subcopy: 'Closed on public holidays',
+    value: 'Mon – Sun · 9 AM – 7 PM',
+    subcopy: '',
     href: null,
     icon: Clock
   }
@@ -31,7 +35,7 @@ const contactCards = [
 
 export default function Contact() {
   useEffect(() => {
-    document.title = 'Apex — Contact'
+    document.title = 'APEX — Contact'
   }, [])
 
   const popup = {
@@ -52,16 +56,6 @@ export default function Contact() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {contactCards.map((card) => {
             const Icon = card.icon
-            const content = (
-              <>
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#8A6A2E]">
-                  <Icon className="h-4 w-4 text-[#D99201]" />
-                  {card.label}
-                </div>
-                <p className="text-xl font-semibold text-[#1A3F22]">{card.value}</p>
-                <p className="text-sm text-[#4C6B37]">{card.subcopy}</p>
-              </>
-            )
 
             const commonProps = { initial: 'hidden', whileInView: 'show', viewport: { once: true, amount: 0.2 }, variants: popup }
 
@@ -73,12 +67,35 @@ export default function Contact() {
                 className="rounded-[24px] border border-[#E5DCCB] bg-white p-6 shadow-sm flex flex-col gap-2"
                 {...commonProps}
               >
-                {card.href ? (
-                  <a href={card.href} className="w-full h-full block">
-                    {content}
+                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#8A6A2E]">
+                  <Icon className="h-4 w-4 text-[#D99201]" />
+                  {card.label}
+                </div>
+                {card.numbers ? (
+                  <>
+                    <p className="text-sm text-[#4C6B37]">{card.subcopy}</p>
+                    <div className="mt-2 space-y-1">
+                      {card.numbers.map((num) => (
+                        <a
+                          key={num.display}
+                          href={num.href}
+                          className="block text-lg font-semibold text-[#1A3F22] hover:underline"
+                        >
+                          {num.display}
+                        </a>
+                      ))}
+                    </div>
+                  </>
+                ) : card.href ? (
+                  <a href={card.href} className="w-full h-full flex flex-col items-center justify-center text-center">
+                    <p className="text-xl font-semibold text-[#1A3F22]">{card.value}</p>
+                    <p className="text-sm text-[#4C6B37]">{card.subcopy}</p>
                   </a>
                 ) : (
-                  content
+                  <div className="flex flex-col items-center justify-center text-center flex-1">
+                    <p className="text-xl font-semibold text-[#1A3F22]">{card.value}</p>
+                    <p className="text-sm text-[#4C6B37]">{card.subcopy}</p>
+                  </div>
                 )}
               </motion.div>
             )

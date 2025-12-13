@@ -10,11 +10,12 @@ import {
   WhyChooseApex,
   LocationPreview,
   PrimaryCTA,
-  QuickContactStrip
+  QuickContactStrip,
+  ClientsSection
 } from '../components/home/HomeSections'
 
 export default function Home(){
-  useEffect(()=>{document.title = 'Apex — Home';}, [])
+  useEffect(()=>{document.title = 'APEX — Home';}, [])
 
   const sectionMotion = {
     initial: { opacity: 0, y: 32 },
@@ -36,19 +37,12 @@ export default function Home(){
       >
         <div className="container mx-auto px-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#F2C94C]">Mission-ready Support</p>
             <h2
-              className="mt-3 text-3xl font-semibold text-white"
+              className="text-3xl font-semibold text-white"
               aria-label="World Class Examination & Training Facilities"
             >
               World Class Examination & Training Facilities
             </h2>
-            <p className="mt-2 text-white/70 max-w-2xl">
-              Trusted by international boards and government agencies.
-            </p>
-            <p className="mt-2 text-white/80 max-w-2xl">
-              To deliver secure, high-quality training and examination solutions with integrity and precision.
-            </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link to="/contact" className="btn-base btn-primary text-center">Contact Us</Link>
@@ -90,6 +84,9 @@ export default function Home(){
       </motion.div>
       <motion.div {...sectionMotion} transition={sectionTransition}>
         <QuickContactStrip />
+      </motion.div>
+      <motion.div {...sectionMotion} transition={sectionTransition}>
+        <ClientsSection />
       </motion.div>
       <motion.div {...sectionMotion} transition={sectionTransition}>
         <PrimaryCTA />

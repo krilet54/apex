@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useMotionValue, useSpring, useInView } from 'framer-motion'
+import { InfrastructureStats, ClientsSection } from '../components/home/HomeSections'
 // directional variants helper
 const dirVariants = (dir = 'up', dist = 12) => {
   const d = dist
@@ -57,7 +58,8 @@ const galleryImages = [
 const evidenceStrip = [
   { src: IMG2, caption: 'Examination Lab', detail: 'Mirrored layout for focused sitting' },
   { src: IMG3, caption: 'Waiting Room', detail: 'Dedicated holding for upcoming cohorts' },
-  { src: IMG4, caption: 'Operations Wing', detail: 'Staff, biometrics, storage' }
+  { src: IMG4, caption: 'Operations Wing', detail: 'Biometrics, storage' },
+  { src: IMG3, caption: 'Staff Room', detail: 'Personal space for staff and examination personnel' }
 ]
 
 const walkthroughSteps = [
@@ -69,7 +71,7 @@ const walkthroughSteps = [
 
 export default function OurCentre() {
   useEffect(() => {
-    document.title = 'Apex — Our Centre'
+    document.title = 'APEX — Our Centre'
   }, [])
 
   return (
@@ -124,7 +126,7 @@ export default function OurCentre() {
       Book The Centre
     </Link>
     <Link to="/about" className="btn-base btn-outline-light">
-      Learn About Apex
+      Learn About APEX
     </Link>
   </motion.div>
 </div>
@@ -133,7 +135,7 @@ export default function OurCentre() {
             <div className="absolute -inset-4 rounded-[32px] bg-white/10 blur-2xl" aria-hidden />
             <motion.img
               src={IMG1}
-              alt="Apex exam lab"
+              alt="APEX exam lab"
               className="relative rounded-[28px] border border-white/20 shadow-2xl w-full object-cover h-80"
               loading="lazy"
               initial={{ opacity: 0, x: 60, scale: 0.98 }}
@@ -178,7 +180,6 @@ export default function OurCentre() {
             </motion.div>
           </motion.div>
         </section>
-
         <section className="mt-16 rounded-[32px] border border-[#E8E0CF] bg-white p-10 lg:p-12">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
@@ -197,7 +198,11 @@ export default function OurCentre() {
             </motion.div>
           </div>
         </section>
+      </PageContainer>
 
+      <InfrastructureStats />
+
+      <PageContainer>
         <section className="mt-14">
           <div className="rounded-[28px] border border-[#E5DCCB] p-6 lg:p-8 bg-white">
             <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('left', 8)}>Photo journal</motion.p>
@@ -284,6 +289,7 @@ export default function OurCentre() {
           </motion.div>
         </section>
       </PageContainer>
+      <ClientsSection />
     </>
   )
 }

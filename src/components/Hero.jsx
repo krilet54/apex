@@ -7,7 +7,7 @@ import heroImg3 from '../assets/heroimg3.png'
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion()
   const slides = [
-    { image: heroImg1, alt: 'Apex secure exam lab overview' },
+    { image: heroImg1, alt: 'APEX secure exam lab overview' },
     { image: heroImg2, alt: 'Candidates seated in premium workstation rows' },
     { image: heroImg3, alt: 'Operations team overseeing exam delivery' }
   ]

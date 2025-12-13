@@ -66,7 +66,7 @@ export default function Header() {
                   key={item.to}
                   to={item.to}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-all duration-200 relative py-2 ${
+                    `text-base font-medium transition-all duration-200 relative py-2 ${
                       isActive
                         ? "text-[#1A3F22]"
                         : "text-[#58761B] hover:text-[#1A3F22]"
@@ -159,7 +159,7 @@ export default function Header() {
                     to={item.to}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+                      `px-4 py-3 text-lg font-medium rounded-lg transition-all duration-200 ${
                         isActive
                           ? "text-[#1A3F22] bg-[#F4F7EB] shadow-sm"
                           : "text-[#58761B] hover:text-[#1A3F22] hover:bg-gray-50"
