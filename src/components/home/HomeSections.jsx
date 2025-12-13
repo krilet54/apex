@@ -195,46 +195,36 @@ export function TrustStrip() {
 export function AboutSnapshot() {
   return (
     <section className="container mx-auto px-6 py-20">
-      <div className="grid gap-10 lg:grid-cols-2 items-start">
-        <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative">
+      <div className="grid gap-10 lg:grid-cols-2 items-stretch">
+        {/* Who We Are - Left Column */}
+        <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="relative flex">
           <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-[#D99201]/18 via-transparent to-[#1A3F22]/15 blur-[60px]" aria-hidden />
-          <div className="relative bg-white/95 rounded-[32px] p-6 shadow-xl border border-[#EFE9DB]">
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="inline-flex text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]"
-            >
-              Who We Are
-            </motion.p>
+          <div className="relative bg-white/95 rounded-[32px] p-8 shadow-xl border border-[#EFE9DB] text-center flex flex-col justify-center flex-1">
             <motion.h2
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
-              transition={{ duration: 0.55, ease: 'easeOut', delay: 0.18 }}
-              className="mt-4 text-[40px] leading-[1.15] font-semibold text-[#1A3F22]"
+              transition={{ duration: 0.55, ease: 'easeOut' }}
+              className="text-[40px] leading-[1.15] font-semibold text-[#1A3F22]"
             >
-              APEX Training and Examination Centre
+              Who We Are
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.6 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
-              className="mt-6 text-lg text-[#1C4B26] leading-relaxed text-justify about-quote"
+              className="mt-6 text-xl text-[#1C4B26] leading-relaxed text-justify about-quote"
             >
              APEX Training & Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within <span className="font-semibold">Guru Harkrishan Public School, Vasant Vihar</span>. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
             </motion.p>
-
-           
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.35 }}
-              className="mt-8 flex flex-wrap gap-4"
+              className="mt-8 flex flex-wrap gap-4 justify-center"
             >
               <Link to="/about" className="btn-base btn-primary">
                 Learn More About APEX
@@ -246,12 +236,13 @@ export function AboutSnapshot() {
           </div>
         </motion.div>
 
+        {/* Reel + Mission Ready Support - Right Column */}
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative space-y-6"
+          className="relative flex flex-col"
         >
-          <div className="reel-shell shadow-2xl">
+          <div className="reel-shell shadow-2xl flex-1">
             <div className="flex items-center justify-between text-xs text-white/70 mb-3">
               <div className="flex items-center gap-2">
                 <span className="inline-flex h-2 w-2 rounded-full bg-[#F2C94C] animate-pulse"></span>
@@ -259,7 +250,7 @@ export function AboutSnapshot() {
               </div>
               <span>1080p Secure Feed</span>
             </div>
-            <div className="relative overflow-hidden rounded-[26px] border border-white/10">
+            <div className="relative overflow-hidden rounded-[26px] border border-white/10 h-full">
               <video
                 className="h-full w-full object-cover"
                 src={timelapseReel}
@@ -272,7 +263,7 @@ export function AboutSnapshot() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
             </div>
           </div>
-          <div className="rounded-2xl border border-[#D99201]/25 bg-white/95 p-6 shadow-lg">
+          <div className="rounded-2xl border border-[#D99201]/25 bg-white/95 p-6 shadow-lg mt-6">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">MISSION-READY SUPPORT</p>
             <h3 className="mt-3 text-2xl font-semibold text-[#1A3F22]">The Benchmark in Examination Services.</h3>
             <p className="mt-2 text-sm text-[#1C4B26] leading-relaxed">
