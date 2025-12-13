@@ -18,9 +18,9 @@ import timelapseReel from '../../assets/images/Stop_Motion_Exam_Centre_Timelapse
 import labImage from '../../assets/images/examination lab.png'
 import waitingRoomImage from '../../assets/images/exam waiting room.png'
 import desksImage from '../../assets/images/desks exam.png'
-import cherishLogo from '../../assets/cherish logo.jpg'
-import greensoLogo from '../../assets/greenso logo.png'
-import tsiLogo from '../../assets/tsi logo.jpeg'
+import cherishLogo from '../../assets/cherish-logo.jpg'
+import greensoLogo from '../../assets/greenso-logo.png'
+import tsiLogo from '../../assets/tsi-logo.jpeg'
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
