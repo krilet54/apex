@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
 import { InfrastructureStats, ClientsSection } from '../components/home/HomeSections'
-import about_img from '../assets/about_apex.png'
+import about_img from '../assets/apex_gallery.png'
 
 // helper to create directional variants
 const dirVariants = (dir = 'up', dist = 12) => {
@@ -135,7 +135,7 @@ export default function About() {
           <div>
             <motion.h2 className="text-2xl lg:text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 6)} transition={{ duration: 0.55 }}>Who we are</motion.h2>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
-              APEX Training and Examination Centre is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
+              <strong className="font-semibold">APEX Training and Examination Centre</strong> is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
             </motion.p>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.95, delay: 0.04 }}>
               Operating from a purpose-designed facility in Vasant Vihar, New Delhi, APEX combines technology-enabled infrastructure, trained operational teams, and structured processes to meet the requirements of national and international examination bodies, academic institutions, and corporate assessment partners.
@@ -152,58 +152,9 @@ export default function About() {
         </motion.section>
       </PageContainer>
 
-      <InfrastructureStats />
-
       <PageContainer>
-        <motion.section
-          className="mt-16 rounded-[32px] border border-[#E8E0CF] bg-white px-6 py-10 lg:px-12 lg:py-12 text-center"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
-        >
-          <motion.p
-            className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]"
-            variants={dirVariants('left', 6)}
-            transition={{ duration: 0.45 }}
-          >
-            Operational Foundations
-          </motion.p>
-          <motion.h2
-            className="mt-3 text-3xl lg:text-[34px] font-semibold text-[#1A3F22]"
-            variants={dirVariants('left', 10)}
-            transition={{ duration: 0.6 }}
-          >
-            How we keep every examination day stable
-          </motion.h2>
-          <motion.div
-            className="mt-8 grid gap-6 md:grid-cols-4 text-[#1C4B26]"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
-          >
-            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
-              <p className="text-sm font-semibold tracking-wide">Purpose-Built Facilities</p>
-              <p className="text-sm text-[#4C6B37] leading-relaxed">Designed for secure, large-scale examination delivery</p>
-            </motion.div>
-            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
-              <p className="text-sm font-semibold tracking-wide">Trained Operational Teams</p>
-              <p className="text-sm text-[#4C6B37] leading-relaxed">Invigilation, IT, and on-site support staff</p>
-            </motion.div>
-            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
-              <p className="text-sm font-semibold tracking-wide">Redundant Systems</p>
-              <p className="text-sm text-[#4C6B37] leading-relaxed">Power, network, and operational continuity ensured</p>
-            </motion.div>
-            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
-              <p className="text-sm font-semibold tracking-wide">Compliance-Ready Setup</p>
-              <p className="text-sm text-[#4C6B37] leading-relaxed">Aligned with global testing and security standards</p>
-            </motion.div>
-          </motion.div>
-        </motion.section>
-
-        <motion.section
-          className="relative mt-16 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden text-white"
+          <motion.section
+            className="relative mt-6 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden text-white"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -244,6 +195,56 @@ export default function About() {
             </motion.ul>
           </div>
         </motion.section>
+
+        <motion.section
+          className="mt-8 mb-12 rounded-[32px] border border-[#E8E0CF] bg-[#FFFAF2] px-6 py-10 lg:px-12 lg:py-12 text-center relative z-10"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+        >
+            <motion.p
+              className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]"
+              variants={dirVariants('left', 6)}
+              transition={{ duration: 0.45 }}
+            >
+              Operational Foundations
+            </motion.p>
+          <motion.h2
+            className="mt-3 text-3xl lg:text-[34px] font-semibold text-[#1A3F22]"
+            variants={dirVariants('left', 10)}
+            transition={{ duration: 0.6 }}
+          >
+            How we keep every examination day stable
+          </motion.h2>
+          <motion.div
+            className="mt-8 grid gap-6 md:grid-cols-4 text-[#1C4B26]"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
+          >
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Purpose-Built Facilities</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Designed for secure, large-scale examination delivery</p>
+            </motion.div>
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Trained Operational Teams</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Invigilation, IT, and on-site support staff</p>
+            </motion.div>
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Redundant Systems</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Power, network, and operational continuity ensured</p>
+            </motion.div>
+            <motion.div variants={dirVariants('up', 8)} className="flex flex-col items-center gap-2">
+              <p className="text-sm font-semibold tracking-wide">Compliance-Ready Setup</p>
+              <p className="text-sm text-[#4C6B37] leading-relaxed">Aligned with global testing and security standards</p>
+            </motion.div>
+          </motion.div>
+        </motion.section>
+
+        {/* Infrastructure stats (full-width) */}
+        <InfrastructureStats fullWidth />
 
         <motion.section className="mt-16 rounded-[32px] border border-[#EADFC8] bg-[#FFFAF2] p-10 text-center" initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.6 }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}>
           <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)} transition={{ duration: 0.45 }}>Engage With Us</motion.p>

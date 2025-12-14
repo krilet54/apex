@@ -39,10 +39,11 @@ export default function Home(){
           <div>
             <h2
               className="text-3xl font-semibold text-white"
-              aria-label="World Class Examination & Training Facilities"
+              aria-label="World Class Training and Examination Facilities"
             >
-              World Class Examination & Training Facilities
+              World Class Training and Examination Facilities
             </h2>
+            <p className="mt-2 text-white/70">Trusted by international boards and government agencies.</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link to="/contact" className="btn-base btn-primary text-center">Contact Us</Link>

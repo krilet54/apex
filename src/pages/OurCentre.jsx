@@ -58,8 +58,9 @@ const galleryImages = [
 const evidenceStrip = [
   { src: IMG2, caption: 'Examination Lab', detail: 'Mirrored layout for focused sitting' },
   { src: IMG3, caption: 'Waiting Room', detail: 'Dedicated holding for upcoming cohorts' },
-  { src: IMG4, caption: 'Operations Wing', detail: 'Biometrics, storage' },
-  { src: IMG3, caption: 'Staff Room', detail: 'Personal space for staff and examination personnel' }
+  { src: IMG4, caption: 'OPERATIONS WING', detail: 'Biometric, storage, staff room' },
+  { src: IMG4, caption: 'AUDIO – VISUAL ROOM', detail: 'AV-enabled room for seminars & specialized programmes' },
+  { src: IMG1, caption: 'TRAINING ROOM', detail: 'Structured space for training & corporate programmes' }
 ]
 
 const walkthroughSteps = [
@@ -160,27 +161,27 @@ export default function OurCentre() {
             </motion.div>
           </motion.div>
 
-          <motion.div className="mt-6 overflow-x-auto pb-4" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-            <motion.div className="flex gap-6 min-w-max" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
-              {evidenceStrip.map((item) => (
-                <motion.div key={item.caption} className="w-[280px] rounded-[28px] overflow-hidden border border-[#E5DCCB] bg-white shadow-sm" variants={dirVariants('up', 10)}>
-                  <motion.img src={item.src} alt={item.caption} className="h-48 w-full object-cover" loading="lazy"
+          <motion.div className="mt-6 pb-4" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
+            <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6" variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
+              {evidenceStrip.map((item, idx) => (
+                <motion.div key={item.caption} className="rounded-[20px] overflow-hidden border border-[#E5DCCB] bg-white shadow-sm" variants={dirVariants('up', 10)}>
+                  <motion.img src={item.src} alt={item.caption} className="aspect-video w-full object-cover" loading="lazy"
                     initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.95, ease: 'easeOut' }}
+                    transition={{ duration: 0.95, ease: 'easeOut', delay: idx * 0.03 }}
                     style={{ willChange: 'transform,opacity' }}
                   />
-                  <div className="p-4">
+                  <div className="p-3">
                     <motion.p className="text-sm uppercase tracking-[0.3em] text-[#58761B]" variants={dirVariants('left', 6)}>{item.caption}</motion.p>
-                    <motion.p className="mt-2 text-[#1C4B26] text-sm" variants={dirVariants('right', 6)}>{item.detail}</motion.p>
+                    <motion.p className="mt-1 text-[#1C4B26] text-sm" variants={dirVariants('right', 6)}>{item.detail}</motion.p>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
         </section>
-        <section className="mt-16 rounded-[32px] border border-[#E8E0CF] bg-white p-10 lg:p-12">
+        <section className="mt-8 rounded-[32px] border border-[#E8E0CF] bg-white p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}>
               <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" variants={dirVariants('left', 6)}>Infrastructure snapshot</motion.p>
@@ -200,10 +201,8 @@ export default function OurCentre() {
         </section>
       </PageContainer>
 
-      <InfrastructureStats />
-
       <PageContainer>
-        <section className="mt-14">
+        <section className="mt-6">
           <div className="rounded-[28px] border border-[#E5DCCB] p-6 lg:p-8 bg-white">
             <motion.p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('left', 8)}>Photo journal</motion.p>
             <motion.div className="mt-6 grid gap-4 sm:grid-cols-2" initial="hidden" whileInView="show" viewport={{ once: true }} variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}>
@@ -212,7 +211,7 @@ export default function OurCentre() {
                   <motion.img
                     src={image.src}
                     alt={image.alt}
-                    className="h-48 w-full object-cover rounded-2xl"
+                    className="aspect-video w-full object-cover rounded-2xl"
                     loading="lazy"
                     initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -229,6 +228,12 @@ export default function OurCentre() {
             </motion.div>
           </div>
         </section>
+
+      </PageContainer>
+
+      <InfrastructureStats />
+
+      <PageContainer>
 
         <section className="mt-14 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <motion.div className="relative rounded-[28px] overflow-hidden border border-[#E5DCCB] bg-black" initial="hidden" whileInView="show" viewport={{ once: true }} variants={dirVariants('up', 10)}>

@@ -26,11 +26,11 @@ export default function Footer() {
       <div className="relative container mx-auto px-6 py-8 lg:py-10 grid gap-8 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         {/* Logo + Social icons */}
         <div className="space-y-4">
-          <div className="mx-auto flex h-32 w-32 sm:h-40 sm:w-40 items-center justify-center rounded-3xl bg-white/95 shadow-2xl shadow-[#0C3E26]/35 border border-white/60">
+          <div className="mx-auto flex h-40 w-40 sm:h-52 sm:w-52 items-center justify-center rounded-3xl bg-white/95 shadow-2xl shadow-[#0C3E26]/35 border border-white/60">
             <img
               src={logonew}
               alt="APEX crest"
-              className="h-20 w-auto object-contain sm:h-24"
+              className="h-32 w-auto object-contain sm:h-40"
               loading="lazy"
             />
           </div>

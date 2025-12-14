@@ -12,7 +12,7 @@ import {
   MonitorSmartphone,
   Users
 } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import useTypedText from '../../hooks/useTypedText'
 import timelapseReel from '../../assets/images/Stop_Motion_Exam_Centre_Timelapse_Video.mp4'
 import labImage from '../../assets/images/examination lab.png'
@@ -21,6 +21,10 @@ import desksImage from '../../assets/images/desks exam.png'
 import cherishLogo from '../../assets/cherish-logo.jpg'
 import greensoLogo from '../../assets/greenso-logo.png'
 import tsiLogo from '../../assets/tsi-logo.jpeg'
+import dntLogo from '../../assets/dnt-logo.jpg'
+import mrdLogo from '../../assets/mrd-logo.jpeg'
+import havenLogo from '../../assets/haven-logo.jpeg'
+import wallFortLogo from '../../assets/wall-fort.jpeg'
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -31,7 +35,11 @@ const fadeUp = {
 const trustLogos = [
   { name: 'Cherish Eduskills', image: cherishLogo },
   { name: 'Greenso Energy', image: greensoLogo },
-  { name: 'TSI', image: tsiLogo }
+  { name: 'TSI', image: tsiLogo },
+  { name: 'DNT', image: dntLogo },
+  { name: 'MRD', image: mrdLogo },
+  { name: 'Haven', image: havenLogo },
+  { name: 'Wall-Fort', image: wallFortLogo }
 ]
 
 const infrastructureStats = [
@@ -87,7 +95,7 @@ const differentiators = [
   {
     icon: Headphones,
     title: 'Dedicated Technical Support',
-    copy: 'On-site engineers and remote NOC coverage.'
+    copy: 'On-site IT personnel available throughout examinations'
   }
 ]
 
@@ -212,7 +220,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
               className="mt-6 text-xl text-[#1C4B26] leading-relaxed text-justify about-quote"
             >
-             APEX Training & Examination Centre is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within <span className="font-semibold">Guru Harkrishan Public School, Vasant Vihar</span>. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
+              <span className="font-semibold">APEX Training & Examination Centre</span> is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within <span className="font-semibold">Guru Harkrishan Public School, Vasant Vihar</span>. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
             </motion.p>
 
             <motion.div
@@ -262,9 +270,6 @@ export function AboutSnapshot() {
           <div className="rounded-2xl border border-[#D99201]/25 bg-white/95 p-6 shadow-lg mt-6">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#58761B]">MISSION-READY SUPPORT</p>
             <h3 className="mt-3 text-2xl font-semibold text-[#1A3F22]">The Benchmark in Examination Services.</h3>
-            <p className="mt-2 text-sm text-[#1C4B26] leading-relaxed">
-              Trusted by international boards and government agencies.
-            </p>
             <p className="mt-1 text-sm text-[#1C4B26] leading-relaxed">
               To deliver secure, high-quality examination and training solutions with integrity and precision.
             </p>
@@ -275,9 +280,13 @@ export function AboutSnapshot() {
   )
 }
 
-export function InfrastructureStats() {
+export function InfrastructureStats({ fullWidth = false }) {
+  const sectionClass = fullWidth
+    ? 'relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-[#0A1A11] py-20 text-white'
+    : 'bg-[#0A1A11] py-20 text-white'
+
   return (
-    <section className="bg-[#0A1A11] py-20 text-white">
+    <section className={sectionClass}>
       <div className="container mx-auto px-6">
         <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/60">Infrastructure Statistics</p>
@@ -565,17 +574,8 @@ export function ClientsSection() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="mt-8 flex justify-center"
         >
-          <div className="w-full max-w-5xl rounded-[24px] bg-white px-8 py-10 shadow-[0_24px_60px_rgba(0,0,0,0.06)] border border-[#E5DCCB] text-center">
-            <p className="text-base leading-relaxed text-[#1C4B26] max-w-3xl mx-auto">
-              APEX Training &amp; Examination Centre has consistently demonstrated a high level of professionalism in
-              examination delivery. Their infrastructure, operational discipline, and on-ground coordination gave us
-              complete confidence in conducting our assessment programmes smoothly and securely.
-            </p>
-            <div className="mt-6">
-              <p className="text-sm font-semibold text-[#C14A32]">Programme Manager</p>
-              <p className="text-xs uppercase tracking-[0.25em] text-[#8A6A2E] mt-1">Academic &amp; Assessment Partner</p>
-            </div>
-          </div>
+          {/* Auto-rotating testimonials slider */}
+          <TestimonialSlider />
         </motion.div>
 
         {/* Our Trusted Clients */}
@@ -613,5 +613,88 @@ export function ClientsSection() {
         </motion.div>
       </div>
     </section>
+  )
+}
+
+function TestimonialSlider() {
+  const testimonials = [
+    {
+      quote: 'Apex Training & Examination Centre provided a reliable examination environment with strong. Their infrastructure and on-ground coordination gave us full confidence throughout the programme.',
+      author: 'Nikhil'
+    },
+    {
+      quote: 'The examinations were conducted in a well-controlled and organised environment. Apex’s team was responsive and handled operations efficiently throughout the sessions.',
+      author: 'Arnav Singh'
+    },
+    {
+      quote: 'Working with Apex Training & Examination Centre was straightforward and reassuring. Their facilities and staff ensured the exams ran smoothly without any operational issues.',
+      author: 'Anshu Chaudhary'
+    }
+  ]
+
+  const [index, setIndex] = useState(0)
+  const pauseRef = useRef(false)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (!pauseRef.current) setIndex(i => (i + 1) % testimonials.length)
+    }, 4500)
+    return () => clearInterval(id)
+  }, [])
+
+  const next = () => setIndex(i => (i + 1) % testimonials.length)
+  const prev = () => setIndex(i => (i - 1 + testimonials.length) % testimonials.length)
+
+  const variants = {
+    enter: { opacity: 0, y: 12 },
+    center: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -12 }
+  }
+
+  return (
+    <div
+      className="relative w-full max-w-5xl"
+      onMouseEnter={() => (pauseRef.current = true)}
+      onMouseLeave={() => (pauseRef.current = false)}
+    >
+      <div className="rounded-[24px] bg-white px-6 py-8 shadow-lg border border-[#E5DCCB] text-center overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.45, ease: 'easeOut' }}
+            className="min-h-[120px] flex flex-col items-center justify-center"
+          >
+            <p className="text-base md:text-lg italic leading-relaxed text-[#1C4B26] max-w-3xl mx-auto">“{testimonials[index].quote}”</p>
+            <div className="mt-4">
+              <p className="text-sm font-semibold text-[#1A3F22]">{testimonials[index].author}</p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Controls */}
+      <button aria-label="Previous testimonial" onClick={prev} className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md hover:bg-white">
+        <svg className="w-4 h-4 text-[#1A3F22]" viewBox="0 0 20 20" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M12 16L6 10l6-6"/></svg>
+      </button>
+      <button aria-label="Next testimonial" onClick={next} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-md hover:bg-white">
+        <svg className="w-4 h-4 text-[#1A3F22]" viewBox="0 0 20 20" fill="none" stroke="currentColor"><path strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" d="M8 4l6 6-6 6"/></svg>
+      </button>
+
+      {/* Dots */}
+      <div className="mt-4 flex items-center justify-center gap-3">
+        {testimonials.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            aria-label={`Show testimonial ${i + 1}`}
+            className={`w-3 h-3 rounded-full transition ${i === index ? 'bg-[#1A3F22]' : 'bg-[#E5E7EB]'}`}
+          />
+        ))}
+      </div>
+    </div>
   )
 }

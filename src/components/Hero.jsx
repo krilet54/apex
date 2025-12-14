@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import heroImg1 from '../assets/heroimg1.png'
-import heroImg2 from '../assets/heroimg2.png'
+import apexcentre23 from '../assets/images/apexcentre23.png'
 import heroImg3 from '../assets/heroimg3.png'
 
 export default function Hero() {
   const prefersReducedMotion = useReducedMotion()
   const slides = [
+    { image: apexcentre23, alt: 'APEX centre overview' },
     { image: heroImg1, alt: 'APEX secure exam lab overview' },
-    { image: heroImg2, alt: 'Candidates seated in premium workstation rows' },
     { image: heroImg3, alt: 'Operations team overseeing exam delivery' }
   ]
   const [activeIndex, setActiveIndex] = useState(0)

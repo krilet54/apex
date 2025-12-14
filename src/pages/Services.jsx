@@ -3,8 +3,12 @@ import { motion } from 'framer-motion'
 import ServiceList from '../components/ServiceList'
 import PageContainer from '../components/PageContainer'
 import { Link } from 'react-router-dom'
-import heroImg2 from '../assets/heroimg2.png'
+import heroImgMP from '../assets/MP.png'
 import { InfrastructureStats, ClientsSection } from '../components/home/HomeSections'
+import IMG1 from '../assets/about_apex.png'
+import IMG2 from '../assets/apex_gallery.png'
+import IMG3 from '../assets/apex_gallery2.png'
+import IMG4 from '../assets/apex_gallery3.png'
 
 const faqs = [
   {
@@ -74,7 +78,7 @@ export default function Services() {
             <motion.div className="relative" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.65, delay: 0.05 }}>
               <div className="absolute -inset-4 rounded-[32px] bg-white/10 blur-2xl" aria-hidden />
               <motion.img
-                src={heroImg2}
+                src={heroImgMP}
                 alt="Operations team preparing an exam hall"
                 className="relative rounded-[28px] border border-white/20 shadow-2xl w-full object-cover h-64 lg:h-80"
                 loading="lazy"
@@ -107,11 +111,11 @@ export default function Services() {
         </section>
       </PageContainer>
 
-      <InfrastructureStats />
+      
 
       <PageContainer>
         <motion.section
-          className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center"
+          className="mt-8 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center"
           {...sectionMotion}
           transition={sectionTransition}
         >
@@ -155,6 +159,7 @@ export default function Services() {
           </motion.div>
         </motion.section>
       </PageContainer>
+      <InfrastructureStats />
       <ClientsSection />
     </>
   )

@@ -129,18 +129,13 @@ export default function Header() {
           >
             {/* Drawer Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200">
-              <div className="flex items-center gap-0">
-                <img
-                  src={logo1}
-                  alt="Logo 1"
-                  className="h-10 w-auto object-contain"
-                />
-                <img
-                  src={logo2}
-                  alt="Logo 2"
-                  className="h-8 w-auto object-contain -ml-1"
-                />
-              </div>
+                <div className="flex items-center gap-0">
+                  <img
+                    src={newlogo}
+                    alt="APEX logo"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
