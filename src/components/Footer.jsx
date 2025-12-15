@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, Twitter, Youtube, Linkedin } from 'lucide-react'
+import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react'
+import xLogo from '../assets/x-logo.svg'
 import servicesData from '../data/services'
 import logonew from '../assets/logo-new.png'
 
@@ -42,9 +43,9 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="Twitter / X"
+              aria-label="X (formerly Twitter)"
             >
-              <Twitter className="w-5 h-5" />
+              <img src={xLogo} alt="X" className="w-5 h-5 object-contain" />
             </a>
             <a
               href="https://www.instagram.com/apexexamcentre?igsh=MXhjMmI5emI0OGU1eg=="

@@ -39,7 +39,7 @@ const trustLogos = [
   { name: 'DNT', image: dntLogo },
   { name: 'MRD', image: mrdLogo },
   { name: 'Haven', image: havenLogo },
-  { name: 'Wall-Fort', image: wallFortLogo }
+  { name: 'Wall-Fort', image: wallFortLogo, className: 'max-h-24' }
 ]
 
 const infrastructureStats = [
@@ -398,9 +398,9 @@ export function WhyChooseApex() {
                 transition={{ duration: 0.6 }}
                 className="rounded-2xl border border-[#E5E2DA] bg-white p-6 text-left shadow-sm hover:-translate-y-1 hover:shadow-lg transition"
               >
-                <div className="inline-flex rounded-xl bg-[#D99201]/15 p-3 text-[#905A01]">
-                  <Icon size={22} />
-                </div>
+                <div className="inline-flex items-center justify-center rounded-full bg-[#D99201]/15 w-12 h-12">
+                    <Icon className="w-5 h-5 text-[#905A01]" />
+                  </div>
                 <h3 className="mt-4 text-lg font-semibold text-[#1A3F22]">{feature.title}</h3>
                 <p className="mt-2 text-sm text-[#58761B]">{feature.copy}</p>
               </motion.div>
@@ -485,9 +485,19 @@ export function QuickContactStrip() {
             <h2 className="mt-3 text-2xl font-semibold text-[#1A3F22]">{quickContactHeadline}</h2>
 
             <div className="mt-6 space-y-4 text-[#1C4B26]">
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-[#D99201]" />
-                <a href="tel:+919560553909" className="hover:underline">+91 9560553909</a>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-[#D99201]" />
+                  <a href="tel:+919560553909" className="hover:underline">+91 9560553909</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-[#D99201]" />
+                  <a href="tel:+919560509196" className="hover:underline">+91 9560509196</a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 text-[#D99201]" />
+                  <a href="tel:01135891079" className="hover:underline">011 3589 1079</a>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#D99201]" />
@@ -594,16 +604,16 @@ export function ClientsSection() {
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mt-8 overflow-hidden"
         >
-          <div className="trust-marquee flex items-center gap-10 px-4">
+          <div className="trust-marquee flex items-center gap-6 px-4">
             {[...trustLogos, ...trustLogos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="min-w-[160px] flex items-center justify-center rounded-2xl bg-white px-6 py-4 shadow-md border border-[#E5DCCB]"
+                className="w-28 h-28 flex items-center justify-center rounded-2xl bg-white shadow-md border border-[#E5DCCB]"
               >
                 <img
                   src={logo.image}
                   alt={`${logo.name} logo`}
-                  className={`${logo.className ?? 'h-14'} w-auto object-contain`}
+                  className={`${logo.className ?? 'max-h-14'} max-w-full object-contain`}
                   draggable={false}
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
