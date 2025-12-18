@@ -35,11 +35,8 @@ const fadeUp = {
 const trustLogos = [
   { name: 'Cherish Eduskills', image: cherishLogo },
   { name: 'Greenso Energy', image: greensoLogo },
-  { name: 'TSI', image: tsiLogo },
-  { name: 'DNT', image: dntLogo },
   { name: 'MRD', image: mrdLogo },
-  { name: 'Haven', image: havenLogo },
-  { name: 'Wall-Fort', image: wallFortLogo, className: 'max-h-24' }
+  { name: 'Haven', image: havenLogo }
 ]
 
 const infrastructureStats = [
@@ -220,7 +217,7 @@ export function AboutSnapshot() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.25 }}
               className="mt-6 text-xl text-[#1C4B26] leading-relaxed text-justify about-quote"
             >
-              <span className="font-semibold">APEX Training & Examination Centre</span> is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within <span className="font-semibold">Guru Harkrishan Public School, Vasant Vihar</span>. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
+              <span className="font-semibold">APEX Training & Examination Centre, driven by TUSHAR SALES INDIA PRIVATE LIMITED</span> is a newly established, fully equipped and operational, high-quality examination delivery and corporate training facility located within <span className="font-semibold">Guru Harkrishan Public School, Vasant Vihar</span>. The centre has been designed and developed to align with global testing standards required by leading international examination bodies, government recruitment agencies, and corporate assessment.
             </motion.p>
 
             <motion.div
@@ -608,12 +605,12 @@ export function ClientsSection() {
             {[...trustLogos, ...trustLogos].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="w-28 h-28 flex items-center justify-center rounded-2xl bg-white shadow-md border border-[#E5DCCB]"
+                className="w-36 h-36 flex items-center justify-center rounded-2xl bg-white shadow-md border border-[#E5DCCB]"
               >
                 <img
                   src={logo.image}
                   alt={`${logo.name} logo`}
-                  className={`${logo.className ?? 'max-h-14'} max-w-full object-contain`}
+                  className={`${logo.className ?? 'max-h-24'} max-w-full object-contain`}
                   draggable={false}
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />

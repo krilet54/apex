@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="relative container mx-auto px-6 py-8 lg:py-10 grid gap-8 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         {/* Logo + Social icons */}
         <div className="space-y-4">
-          <div className="mx-auto flex h-40 w-40 sm:h-52 sm:w-52 items-center justify-center rounded-3xl bg-white/95 shadow-2xl shadow-[#0C3E26]/35 border border-white/60">
+          <div className="flex h-40 w-40 sm:h-52 sm:w-52 items-center justify-center rounded-3xl bg-white/95 shadow-2xl shadow-[#0C3E26]/35 border border-white/60 ml-[-11px]">
             <img
               src={logonew}
               alt="APEX crest"
@@ -36,45 +36,47 @@ export default function Footer() {
             />
           </div>
 
-          {/* Social Media Icons */}
-          <div className="flex items-center justify-center gap-4 mt-4">
-            <a
-              href="https://x.com/ApexExamCentre?t=TN59Wg11kTVXCZGH_-tSZA&s=08"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="X (formerly Twitter)"
-            >
-              <img src={xLogo} alt="X" className="w-5 h-5 object-contain" />
-            </a>
-            <a
-              href="https://www.instagram.com/apexexamcentre?igsh=MXhjMmI5emI0OGU1eg=="
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.youtube.com/@ApexExamCentre"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
-              aria-label="YouTube"
-            >
-              <Youtube className="w-5 h-5" />
-            </a>
+          {/* Social Media Icons (centered under logo container) */}
+          <div className="w-40 sm:w-52 mt-4 ml-[-11px]">
+            <div className="flex items-center justify-center gap-4">
+              <a
+                href="https://x.com/ApexExamCentre?t=TN59Wg11kTVXCZGH_-tSZA&s=08"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
+                aria-label="X (formerly Twitter)"
+              >
+                <img src={xLogo} alt="X" className="w-5 h-5 object-contain" />
+              </a>
+              <a
+                href="https://www.instagram.com/apexexamcentre?igsh=MXhjMmI5emI0OGU1eg=="
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@ApexExamCentre"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Navigation Links */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Pages</p>
-          <ul className="mt-3 space-y-2 text-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/70">Pages</p>
+          <ul className="mt-3 space-y-2 text-base">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <Link to={link.to} className="text-white/80 transition hover:text-white">
+                <Link to={link.to} className="text-white/80 text-base transition hover:text-white">
                   {link.label}
                 </Link>
               </li>
@@ -84,8 +86,8 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Services</p>
-          <ul className="mt-3 space-y-2 text-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/70">Services</p>
+          <ul className="mt-3 space-y-2 text-base">
             {topServices.map((service) => (
               <li key={service.id}>
                 <Link to={`/services/${service.slug}`} className="text-white/80 transition hover:text-white">
@@ -98,8 +100,8 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/70">Quick Contact</p>
-          <address className="not-italic mt-3 space-y-2 text-sm text-white/80">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/70">Quick Contact</p>
+          <address className="not-italic mt-3 space-y-2 text-base text-white/80">
             <div>
               Guru Harkrishan Public School<br />
               Vasant Vihar, New Delhi – 110057
@@ -129,7 +131,7 @@ export default function Footer() {
       </div>
 
       {/* Footer bottom */}
-      <div className="relative border-t border-white/15 py-3 text-center text-xs text-white/75 space-x-1">
+      <div className="relative border-t border-white/15 py-4 text-center text-sm text-white/85 space-x-1">
         <span>© {new Date().getFullYear()} APEX. All rights reserved.</span>
         <span>
           Made by{' '}

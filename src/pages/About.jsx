@@ -135,7 +135,7 @@ export default function About() {
           <div>
             <motion.h2 className="text-2xl lg:text-3xl font-semibold text-[#1A3F22]" variants={dirVariants('left', 6)} transition={{ duration: 0.55 }}>Who we are</motion.h2>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.9 }}>
-              <strong className="font-semibold">APEX Training and Examination Centre</strong> is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
+              <strong className="font-semibold">APEX Training and Examination Centre, driven by TUSHAR SALES INDIA PRIVATE LIMITED</strong> is a professionally managed examination and training services provider supporting secure, large-scale assessment delivery.
             </motion.p>
             <motion.p className="mt-4 text-[#4C6B37] leading-relaxed text-justify" variants={dirVariants('down', 10)} transition={{ duration: 0.95, delay: 0.04 }}>
               Operating from a purpose-designed facility in Vasant Vihar, New Delhi, APEX combines technology-enabled infrastructure, trained operational teams, and structured processes to meet the requirements of national and international examination bodies, academic institutions, and corporate assessment partners.
