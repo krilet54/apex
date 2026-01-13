@@ -103,6 +103,9 @@ export default function Credentials() {
               <p className="mt-3 text-[#4C6B37] leading-relaxed">
                 We have successfully conducted multiple examination sessions for internationally reputed examination bodies, including examinations administered through the British Council and other global testing partners.
               </p>
+              <p className="mt-3 text-[#4C6B37] leading-relaxed text-sm lg:text-base">
+                These examinations are categorised as high-stakes assessments, requiring strict adherence to global examination protocols, secure candidate handling, controlled testing environments, and real-time operational monitoring.
+              </p>
             </div>
             <div>
               <div className="inline-flex items-center rounded-full bg-[#F5F3E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#58761B]">
@@ -140,9 +143,6 @@ export default function Credentials() {
                   </p>
                 </div>
               </div>
-              <p className="mt-3 text-[#4C6B37] leading-relaxed text-sm lg:text-base">
-                These examinations are categorised as high-stakes assessments, requiring strict adherence to global examination protocols, secure candidate handling, controlled testing environments, and real-time operational monitoring.
-              </p>
             </div>
           </motion.div>
 
@@ -156,6 +156,9 @@ export default function Credentials() {
                 <h3 className="text-xl lg:text-2xl font-semibold">Upcoming &amp; Committed Examination Sessions</h3>
                 <p className="mt-3 text-[#4C6B37] leading-relaxed">
                   In line with our continued engagement with international examination bodies, APEX is committed to delivering several upcoming examination sessions in the coming months.
+                </p>
+                <p className="mt-3 text-[#4C6B37] leading-relaxed text-sm lg:text-base">
+                  These scheduled engagements reflect the continued trust placed in APEX by prestigious examination authorities.
                 </p>
               </div>
               <div>
@@ -188,9 +191,6 @@ export default function Credentials() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-3 text-[#4C6B37] leading-relaxed text-sm lg:text-base">
-                  These scheduled engagements reflect the continued trust placed in APEX by prestigious examination authorities.
-                </p>
               </div>
             </div>
           </motion.div>
