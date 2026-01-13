@@ -5,11 +5,6 @@ import { Shield, Zap, Users, Clock, CheckCircle2 } from 'lucide-react'
 import PageContainer from '../components/PageContainer'
 import { InfrastructureStats, ClientsSection } from '../components/home/HomeSections'
 import heroImage from '../assets/apex_gallery2.png'
-import accaLogo from '../assets/acca.png'
-import cfaLogo from '../assets/cfa.png'
-import bitsLogo from '../assets/bits.png'
-import britishCouncilLogo from '../assets/british council.png'
-import mrcpLogo from '../assets/mrcp.svg'
 
 // helper to create directional variants
 const dirVariants = (dir = 'up', dist = 12) => {
@@ -108,48 +103,6 @@ export default function Credentials() {
               <p className="mt-3 text-[#4C6B37] leading-relaxed">
                 We have successfully conducted multiple examination sessions for internationally reputed examination bodies, including examinations administered through the British Council and other global testing partners.
               </p>
-              <div className="mt-5 flex flex-wrap items-center gap-4 sm:gap-6">
-                <div className="h-10 sm:h-12 flex items-center">
-                  <img
-                    src={accaLogo}
-                    alt="ACCA logo"
-                    className="h-full w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="h-10 sm:h-12 flex items-center">
-                  <img
-                    src={cfaLogo}
-                    alt="CFA logo"
-                    className="h-full w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="h-10 sm:h-12 flex items-center">
-                  <img
-                    src={bitsLogo}
-                    alt="BITS Pilani logo"
-                    className="h-full w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="h-10 sm:h-12 flex items-center">
-                  <img
-                    src={britishCouncilLogo}
-                    alt="British Council logo"
-                    className="h-full w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="h-10 sm:h-12 flex items-center">
-                  <img
-                    src={mrcpLogo}
-                    alt="MRCP logo"
-                    className="h-8 sm:h-10 w-auto object-contain"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
             </div>
             <div>
               <div className="inline-flex items-center rounded-full bg-[#F5F3E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#58761B]">
