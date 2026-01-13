@@ -34,6 +34,7 @@ export default function Header() {
     { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
     { to: "/our-centre", label: "Our Centre" },
+    { to: "/credentials", label: "Credentials" },
     { to: "/services", label: "Services" },
     { to: "/contact", label: "Contact Us" },
   ];
