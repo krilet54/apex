@@ -50,6 +50,15 @@ export default function Footer() {
                 <img src={xLogo} alt="X" className="w-5 h-5 object-contain" />
               </a>
               <a
+                href="https://www.facebook.com/share/17o6J9kmoE/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 rounded-full bg-white/10 hover:bg-[#6DE5A9]/20 transition"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
                 href="https://www.instagram.com/apexexamcentre?igsh=MXhjMmI5emI0OGU1eg=="
                 target="_blank"
                 rel="noreferrer"

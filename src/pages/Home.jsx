@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServiceList from '../components/ServiceList'
+import apexBrochure from '../assets/Apex_brochure.pdf'
 import {
   AboutSnapshot,
   InfrastructureStats,
@@ -48,10 +49,9 @@ export default function Home(){
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link to="/contact" className="btn-base btn-primary text-center">Contact Us</Link>
             <a
-              href="/apex-brochure.pdf"
+              href={apexBrochure}
               className="btn-base btn-outline-light text-center"
-              target="_blank"
-              rel="noreferrer"
+              download="Apex_brochure.pdf"
             >
               Download Brochure
             </a>
